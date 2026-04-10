@@ -28,7 +28,11 @@
 /* ─── Reset & base ──────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+}
 
 body {
   font-family: var(--fuente-texto);
@@ -36,6 +40,7 @@ body {
   color: var(--marron-texto);
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -918,6 +923,7 @@ footer strong { opacity: 1; color: var(--malva-claro); }
   .valor-grid { grid-template-columns: 1fr 1fr; }
   .testimonios-grid { grid-template-columns: 1fr 1fr; }
   .modal-grid { grid-template-columns: 1fr; }
+  .contenedor { padding: 0 1rem; }
 
   /* Navbar en tablet/móvil horizontal: hamburguesa desde 900px */
   .navbar {
@@ -951,4 +957,5 @@ footer strong { opacity: 1; color: var(--malva-claro); }
   .historia-imagen-flotante { display: none; }
   .hero-imagen-badge { display: none; }
   .filtros-wrapper { padding: 1rem; }
+  * { min-width: 0; }
 }
