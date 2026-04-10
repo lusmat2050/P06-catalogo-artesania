@@ -143,7 +143,9 @@ function abrirModal(id) {
           <p><strong>Ocasión:</strong> ${collar.ocasion}</p>
         </div>
         <div class="modal-acciones">
-          <a href="mailto:cristinagartesania@gmail.com?subject=Interés en collar ${collar.nombre}&body=Hola, me gustaría más información sobre el collar ${collar.nombre} (${collar.precio}€)."
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cristinagartesania@gmail.com&su=${encodeURIComponent('Interés en collar ' + collar.nombre)}&body=${encodeURIComponent('Hola, me gustaría más información sobre el collar ' + collar.nombre + ' (' + collar.precio + '€).')}"
+             target="_blank"
+             rel="noopener"
              class="btn-principal">
             Pedir información
           </a>
@@ -200,8 +202,8 @@ function enviarPersonalizacion(e) {
   };
 
   const mensaje = encodeURIComponent(construirMensajePersonalizacion(datos));
-  const email = "cristinagartesania@gmail.com";
-  window.location.href = `mailto:${email}?subject=Pedido%20collar%20personalizado&body=${mensaje}`;
+  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=cristinagartesania@gmail.com&su=${encodeURIComponent('Pedido collar personalizado')}&body=${mensaje}`;
+  window.open(url, "_blank", "noopener");
 }
 
 // ─── Smooth scroll para anclas ─────────────────────────────────────────────
