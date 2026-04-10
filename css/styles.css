@@ -358,7 +358,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 /* ─── PROPUESTA DE VALOR ────────────────────────────────────────────────── */
 #valor .valor-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 2rem;
   margin-top: 1rem;
 }
@@ -773,7 +773,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .testimonios-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 1.5rem;
 }
 .testimonio-card {
@@ -920,8 +920,6 @@ footer strong { opacity: 1; color: var(--malva-claro); }
   }
   .hero-imagen-wrapper { order: -1; }
   .historia-imagen { order: -1; }
-  .valor-grid { grid-template-columns: 1fr 1fr; }
-  .testimonios-grid { grid-template-columns: 1fr 1fr; }
   .modal-grid { grid-template-columns: 1fr; }
   .contenedor { padding: 0 1rem; }
 
@@ -950,8 +948,6 @@ footer strong { opacity: 1; color: var(--malva-claro); }
 
 @media (max-width: 640px) {
   .seccion { padding: 3.5rem 0; }
-  .valor-grid { grid-template-columns: 1fr; }
-  .testimonios-grid { grid-template-columns: 1fr; }
   .form-fila-doble { grid-template-columns: 1fr; }
   #catalogo-grid { grid-template-columns: 1fr; }
   .historia-imagen-flotante { display: none; }
