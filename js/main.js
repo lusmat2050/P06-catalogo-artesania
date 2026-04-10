@@ -143,7 +143,7 @@ function abrirModal(id) {
           <p><strong>Ocasión:</strong> ${collar.ocasion}</p>
         </div>
         <div class="modal-acciones">
-          <a href="mailto:cristinagigato@gmail.com?subject=Interés en collar ${collar.nombre}&body=Hola, me gustaría más información sobre el collar ${collar.nombre} (${collar.precio}€)."
+          <a href="mailto:cristinagartesania@gmail.com?subject=Interés en collar ${collar.nombre}&body=Hola, me gustaría más información sobre el collar ${collar.nombre} (${collar.precio}€)."
              class="btn-principal">
             Pedir información
           </a>
@@ -200,7 +200,7 @@ function enviarPersonalizacion(e) {
   };
 
   const mensaje = encodeURIComponent(construirMensajePersonalizacion(datos));
-  const email = "cristinagigato@gmail.com";
+  const email = "cristinagartesania@gmail.com";
   window.location.href = `mailto:${email}?subject=Pedido%20collar%20personalizado&body=${mensaje}`;
 }
 
