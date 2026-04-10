@@ -342,7 +342,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .historia-texto blockquote {
   font-family: var(--fuente-titulo);
-  font-size: 1.4rem;
+  font-size: 1.05rem;
   font-style: italic;
   color: var(--malva);
   border-left: 3px solid var(--malva-claro);
