@@ -957,4 +957,8 @@ footer strong { opacity: 1; color: var(--malva-claro); }
   .hero-imagen-badge { display: none; }
   .filtros-wrapper { padding: 1rem; }
   * { min-width: 0; }
+
+  .filtros-label {
+    width: 100%;
+  }
 }
