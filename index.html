@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cristina Gigato — Collares artesanales hechos a mano</title>
+  <meta name="description" content="Collares hechos a mano con amor y dedicación. Cada pieza es única, tejida a mano con los mejores materiales. Diseños exclusivos para lucir en cualquier ocasión." />
+
+  <!-- Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="contenedor navbar-inner">
+        <a href="#hero" class="navbar-logo">Cristina Gigato <span>— Collares artesanales</span></a>
+
+        <ul id="nav-links" role="list">
+          <li><a href="#historia">Mi historia</a></li>
+          <li><a href="#coleccion">Colección</a></li>
+          <li><a href="#personalizar">Personalizar</a></li>
+          <li><a href="#testimonios">Clientas</a></li>
+          <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+        </ul>
+
+        <button
+          id="menu-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          onclick="toggleMenu()"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section id="hero" aria-label="Bienvenida">
+      <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+
+      <div class="contenedor hero-inner">
+        <div class="hero-texto">
+          <span class="seccion-etiqueta">✦ 100% Hecho a mano</span>
+          <h1>
+            Collares tejidos a mano en Sevilla<br />
+            para llevar contigo a donde <em>vayas</em>
+          </h1>
+          <p>
+            Cada collar es una historia en miniatura. Los tejo con paciencia, uno a uno,
+            eligiendo cada cuenta y cada cristal con mimo para que sea tuyo de verdad.
+          </p>
+          <div class="hero-acciones">
+            <a href="#coleccion" class="btn-principal">Descubrir la colección</a>
+            <a href="#personalizar" class="btn-secundario">Personalizar el tuyo</a>
+          </div>
+          <div style="display:flex; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap;">
+            <div class="hero-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              </svg>
+              Piezas únicas
+            </div>
+            <div class="hero-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+              </svg>
+              Materiales seleccionados
+            </div>
+            <div class="hero-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
+              </svg>
+              Envío con embalaje cuidado
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-imagen-wrapper">
+          <!-- FOTO HERO: cambia el src por la ruta de tu foto (proporción recomendada 4:5) -->
+          <img
+            src="images/hero/hero-collares.png"
+            alt="Collares artesanales de Cristina Gigato"
+          />
+          <div class="hero-imagen-badge">
+            <span class="icono">🎀</span>
+            <div>
+              <div style="font-size:0.75rem; opacity:0.7; font-weight:400;">Tejidos</div>
+              <div>a mano, siempre</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ HISTORIA ══════════════ -->
+    <section id="historia" class="seccion seccion-alternada">
+      <div class="contenedor">
+        <div class="historia-inner historia-sin-foto">
+          <div class="historia-texto">
+            <span class="seccion-etiqueta">✦ Mi historia</span>
+            <h2>De Zahara a Sevilla, con las manos siempre llenas de hilo.</h2>
+
+            <blockquote>
+              "Nací en Zahara de la Sierra, uno de los pueblos más bonitos de España. Allí, entre callejuelas blancas y la sierra, se me despertó la curiosidad por crear. Llevo más de 40 años haciendo cosas con mis manos: coser, ganchillo, pintar, incluso repostería.
+
+Tuve una tienda de lanas en Sevilla, y lo que más disfrutaba era dar cursos a mis clientas. Ver cómo aprendían y se ilusionaban era mi mayor recompensa.
+
+Ahora, ya jubilada, no puedo parar. Mis collares nacen por las noches, sentada en la mesa camilla. Me inspiro viendo videos en YouTube, probando cosas nuevas.
+
+Aunque vivo en Sevilla, mi esencia sigue siendo de pueblo. Por eso mis collares y pendientes tienen ese punto flamenco, alegre, pero también algo de la calma de la sierra. Me encanta el color, los toques que recuerdan a las ferias y a las flores del campo.
+
+Compro los materiales en tiendas de Sevilla y, si no encuentro lo que busco, pido por internet. Pero cada cuenta, cada hilo, lo elijo yo personalmente.
+
+La creatividad no entiende de edades ni de fronteras. Y yo, desde Zahara hasta Sevilla, todavía tengo mucho que contar,"
+            </blockquote>
+
+            <!-- ✏️ CAMBIA ESTE TEXTO por tu historia real -->
+
+            <a href="#coleccion" class="btn-principal" style="margin-top:1.75rem; display:inline-block;">
+              Ver la colección
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ PROPUESTA DE VALOR ══════════════ -->
+    <section id="valor" class="seccion">
+      <div class="contenedor">
+        <div class="seccion-titulo">
+          <span class="seccion-etiqueta">✦ ¿Por qué mis collares?</span>
+          <h2>Cada pieza cuenta su propia historia</h2>
+        </div>
+        <div class="valor-grid">
+          <div class="valor-card">
+            <div class="valor-icono">🧵</div>
+            <h3>100% confeccionado a mano</h3>
+            <p>Cada cuenta, cada nudo, cada detalle está puesto con intención. No hay dos collares exactamente iguales.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icono">✨</div>
+            <h3>Materiales seleccionados</h3>
+            <p>Perlas sintéticas de alta calidad, cristales facetados, estructuras doradas. Materiales que brillan y duran.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icono">💌</div>
+            <h3>Con embalaje con mimo</h3>
+            <p>Cada collar sale con su caja y su tarjeta. Perfecto para regalar o para darte un capricho bien presentado.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icono">🎨</div>
+            <h3>Personalizable</h3>
+            <p>¿Tienes un color favorito? ¿Una ocasión especial? Cuéntamelo y diseño un collar pensado solo para ti.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icono">📍</div>
+            <h3>Hecho en Sevilla</h3>
+            <p>Sabes exactamente quién ha hecho tu collar, dónde y con qué. Sin intermediarios, sin fábricas.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icono">🌸</div>
+            <h3>Para cualquier ocasión</h3>
+            <p>Desde una cena de gala hasta un paseo de domingo. Hay un collar tuyo para cada momento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CATÁLOGO ══════════════ -->
+    <section id="coleccion" class="seccion">
+      <div class="contenedor">
+        <div class="seccion-titulo">
+          <span class="seccion-etiqueta">✦ La colección</span>
+          <h2>Encuentra el tuyo</h2>
+          <p>Filtra por color, largo o estilo hasta dar con el que te enamore.</p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filtros-wrapper" role="search" aria-label="Filtros de la colección">
+          <div class="filtros-grupo">
+            <span class="filtros-label">Color</span>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="dorado">
+              <span class="color-muestra color-dorado"></span> Dorado
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="perla">
+              <span class="color-muestra color-perla"></span> Perla
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="pastel">
+              <span class="color-muestra color-pastel"></span> Pastel
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="multicolor">
+              <span class="color-muestra color-multicolor"></span> Multicolor
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="lavanda">
+              <span class="color-muestra color-lavanda"></span> Lavanda
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="blanco">
+              <span class="color-muestra color-blanco"></span> Blanco
+            </button>
+          </div>
+
+          <div class="filtros-grupo">
+            <span class="filtros-label">Largo</span>
+            <button class="filtro-btn" data-filtro-largo="corto">Collar corto</button>
+            <button class="filtro-btn" data-filtro-largo="largo">Collar largo</button>
+          </div>
+
+          <div class="filtros-grupo">
+            <span class="filtros-label">Estilo</span>
+            <button class="filtro-btn" data-filtro-estilo="elegante">Elegante</button>
+            <button class="filtro-btn" data-filtro-estilo="romantico">Romántico</button>
+            <button class="filtro-btn" data-filtro-estilo="bohemio">Bohemio</button>
+            <button class="filtro-btn" data-filtro-estilo="sofisticado">Sofisticado</button>
+          </div>
+
+          <div class="filtros-footer">
+            <span id="resultado-contador" aria-live="polite"></span>
+            <button id="limpiar-filtros">Quitar filtros</button>
+          </div>
+        </div>
+
+        <!-- Grid de collares -->
+        <div id="catalogo-grid" role="list" aria-label="Collares disponibles">
+          <!-- Se genera desde catalog.js + main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ PERSONALIZAR ══════════════ -->
+    <section id="personalizar" class="seccion">
+      <div class="contenedor">
+        <div class="personalizar-inner">
+          <div class="personalizar-info">
+            <span class="seccion-etiqueta">✦ Diseño personalizado</span>
+            <h2>¿No has encontrado el tuyo? Lo hacemos juntas.</h2>
+            <p>
+              Cuéntame qué tienes en mente: los colores que te gustan, para qué ocasión
+              lo quieres, si prefieres algo discreto o que llame la atención. Yo me encargo del resto.
+            </p>
+            <ul class="personalizar-lista">
+              <li>Colores a tu elección</li>
+              <li>Largo personalizado</li>
+              <li>Tipo de collar: corto o largo</li>
+              <li>Para regalar o para ti</li>
+              <li>Presupuesto flexible</li>
+              <li>Respuesta en 24-48h</li>
+            </ul>
+          </div>
+
+          <form id="form-personalizar" class="form-personalizar" novalidate>
+            <h3>Cuéntame tu idea</h3>
+
+            <div class="form-fila-doble">
+              <div class="form-grupo">
+                <label for="tipo">Tipo de collar</label>
+                <select id="tipo" name="tipo" required>
+                  <option value="">Elige un tipo…</option>
+                  <option value="Collar corto clásico">Corto clásico</option>
+                  <option value="Collar largo">Largo</option>
+                  <option value="No lo sé, me lo recomiendas tú">No sé, recomiéndame tú</option>
+                </select>
+              </div>
+              <div class="form-grupo">
+                <label for="largo">Largo preferido</label>
+                <select id="largo" name="largo" required>
+                  <option value="">Elige…</option>
+                  <option value="Choker (pegado al cuello, ~38 cm)">Choker (~38 cm)</option>
+                  <option value="Corto (~45 cm)">Corto (~45 cm)</option>
+                  <option value="Medio (~55 cm)">Medio (~55 cm)</option>
+                  <option value="Largo (~70 cm o más)">Largo (~70 cm+)</option>
+                  <option value="Sin preferencia">Sin preferencia</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grupo">
+              <label for="colores">Colores o tonos que te gustan</label>
+              <input
+                type="text"
+                id="colores"
+                name="colores"
+                placeholder="Ej: tonos tierra, pastel, dorado, azul…"
+                required
+              />
+            </div>
+
+            <div class="form-grupo">
+              <label for="materiales">Materiales o elementos favoritos</label>
+              <input
+                type="text"
+                id="materiales"
+                name="materiales"
+                placeholder="Ej: perlas, cristales, flores, sin preferencia…"
+              />
+            </div>
+
+            <div class="form-fila-doble">
+              <div class="form-grupo">
+                <label for="ocasion">Ocasión</label>
+                <select id="ocasion" name="ocasion" required>
+                  <option value="">Elige…</option>
+                  <option value="Día a día">Día a día</option>
+                  <option value="Trabajo / Oficina">Trabajo / Oficina</option>
+                  <option value="Evento o celebración">Evento / Celebración</option>
+                  <option value="Boda o comunión">Boda / Comunión</option>
+                  <option value="Regalo">Para regalar</option>
+                  <option value="Sin ocasión especial">Sin ocasión especial</option>
+                </select>
+              </div>
+              <div class="form-grupo">
+                <label for="presupuesto">Presupuesto aproximado</label>
+                <select id="presupuesto" name="presupuesto" required>
+                  <option value="">Elige…</option>
+                  <option value="Menos de 20 €">Menos de 20 €</option>
+                  <option value="Entre 20 y 35 €">Entre 20 y 35 €</option>
+                  <option value="Entre 35 y 50 €">Entre 35 y 50 €</option>
+                  <option value="Más de 50 €">Más de 50 €</option>
+                  <option value="Sin límite claro">Sin límite claro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grupo">
+              <label for="notas">Algo más que quieras añadir</label>
+              <textarea
+                id="notas"
+                name="notas"
+                placeholder="Cuéntame lo que quieras: a quién va dirigido, si hay algún color que no te guste, si lo necesitas para una fecha concreta…"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-principal">
+              Enviar mi idea ✉️
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ TESTIMONIOS ══════════════ -->
+    <section id="testimonios" class="seccion seccion-alternada">
+      <div class="contenedor">
+        <div class="seccion-titulo">
+          <span class="seccion-etiqueta">✦ Clientas felices</span>
+          <h2>Lo que dicen las que ya llevan uno</h2>
+          <p>Nada como saber que llevas algo hecho con cariño.</p>
+        </div>
+        <div class="testimonios-grid">
+          <div class="testimonio-card">
+            <div class="testimonio-estrellas">★★★★★</div>
+            <blockquote>
+              "Me regalaron el collar Liz para mi cumpleaños y no me lo he quitado.
+              La calidad es increíble para el precio, y el embalaje era precioso."
+            </blockquote>
+            <div class="testimonio-autora">
+              <div class="testimonio-avatar">M</div>
+              <div>
+                <div class="testimonio-nombre">María José</div>
+                <div class="testimonio-lugar">Sevilla</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonio-card">
+            <div class="testimonio-estrellas">★★★★★</div>
+            <blockquote>
+              "Pedí uno personalizado para la boda de mi hermana. Cristina me escuchó,
+              me propuso opciones y el resultado fue exactamente lo que imaginaba."
+            </blockquote>
+            <div class="testimonio-autora">
+              <div class="testimonio-avatar">L</div>
+              <div>
+                <div class="testimonio-nombre">Laura</div>
+                <div class="testimonio-lugar">Huelva</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonio-card">
+            <div class="testimonio-estrellas">★★★★★</div>
+            <blockquote>
+              "El collar Ingrid es exactamente como en las fotos, pero en persona brilla
+              muchísimo más. Me encanta que sea hecho a mano, se nota en cada detalle."
+            </blockquote>
+            <div class="testimonio-autora">
+              <div class="testimonio-avatar">A</div>
+              <div>
+                <div class="testimonio-nombre">Ana</div>
+                <div class="testimonio-lugar">Cádiz</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CONTACTO ══════════════ -->
+    <section id="contacto" class="seccion">
+      <div class="contenedor">
+        <span class="seccion-etiqueta">✦ Hablamos</span>
+        <h2>¿Te ha gustado algo? Escríbeme sin compromiso</h2>
+        <p>
+          No hay tienda online, porque prefiero el trato directo. Escríbeme por email
+          y te cuento todo sobre el collar que te ha llamado la atención.
+        </p>
+        <div class="contacto-acciones">
+          <a href="mailto:cristinagigato@gmail.com" class="btn-principal">
+            Escribir un email
+          </a>
+        </div>
+
+        <div class="contacto-info">
+          <div class="contacto-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            cristinagigato@gmail.com
+          </div>
+          <div class="contacto-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Sevilla, España
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer>
+    <div class="contenedor">
+      <p>
+        © 2025 <strong>Cristina Gigato — Collares artesanales</strong>
+        <span class="footer-separador">·</span>
+        Collares hechos a mano en Sevilla
+        <span class="footer-separador">·</span>
+        Todos los derechos reservados
+      </p>
+    </div>
+  </footer>
+
+  <!-- ══════════════ MODAL ══════════════ -->
+  <div id="modal-collar" role="dialog" aria-modal="true" aria-label="Detalle del collar">
+    <div class="modal-caja">
+      <button class="modal-cerrar" onclick="cerrarModal()" aria-label="Cerrar">✕</button>
+      <div id="modal-contenido"></div>
+    </div>
+  </div>
+
+  <!-- Scripts — catalog.js primero para que main.js pueda leer COLLARES -->
+  <script src="js/catalog.js"></script>
+  <script src="js/main.js"></script>
+  <!-- preview.js solo actúa en local, en la web publicada no hace nada -->
+  <script src="js/preview.js"></script>
+</body>
+</html>
