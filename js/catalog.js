@@ -62,7 +62,7 @@ const COLLARES = [
     nombre: "PENÉLOPE",
     precio: 14,
     imagen: "images/collares/penelope-main.png",
-    imagenDetalle: "images/collares/penelope-detalle.jpg",
+    imagenDetalle: "images/collares/penelope-detalle.png",
     descripcion:
       "Collar largo tejido a mano, una joya etérea que evoca la dulzura de un jardín en primavera. Sus vibrantes tonos pastel añaden un toque bohemio, romántico y chic.",
     colores: ["pastel", "multicolor"],
@@ -76,8 +76,8 @@ const COLLARES = [
     id: "ingrid",
     nombre: "INGRID",
     precio: 27,
-    imagen: "images/collares/ingrid-main.jpg",
-    imagenDetalle: "images/collares/ingrid-detalle.jpg",
+    imagen: "images/collares/ingrid-main.png",
+    imagenDetalle: "images/collares/ingrid-detalle.png",
     descripcion:
       "Collar babero tejido a mano con técnica intrincada. Captura la serenidad de los campos de lavanda. Su diseño volumétrico y la mezcla de texturas lo convierten en una pieza sofisticada.",
     colores: ["lavanda", "pastel"],
@@ -91,8 +91,8 @@ const COLLARES = [
     id: "nicole",
     nombre: "NICOLE",
     precio: 26,
-    imagen: "images/collares/nicole-main.jpg",
-    imagenDetalle: "images/collares/nicole-detalle.jpg",
+    imagen: "images/collares/nicole-main.png",
+    imagenDetalle: "images/collares/nicole-detalle.png",
     descripcion:
       "Collar largo sofisticado que juega con la luz y la textura. Diseñado para la mujer que aprecia la elegancia modular y el detalle artesanal.",
     colores: ["pastel", "blanco"],
