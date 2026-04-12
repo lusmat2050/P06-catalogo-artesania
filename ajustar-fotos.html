@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajustar encuadre — Pendientes</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f5ede6;
+      color: #3a2416;
+      padding: 2rem 1.5rem;
+    }
+
+    .cabecera {
+      max-width: 960px;
+      margin: 0 auto 2.5rem;
+    }
+    .cabecera h1 {
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      color: #7b4f2e;
+      margin-bottom: 0.75rem;
+    }
+    .cabecera p {
+      color: #6d4c3d;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 680px;
+    }
+    .cabecera code {
+      background: #f0e0d0;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    /* ── Bloque por pendiente ──────────────────────────────── */
+    .pendiente-bloque {
+      background: white;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      margin: 0 auto 1.5rem;
+      max-width: 960px;
+      box-shadow: 0 2px 16px rgba(92,61,46,0.1);
+    }
+    .pendiente-nombre {
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+      color: #7b4f2e;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* Fila de las dos imágenes */
+    .imagenes-fila {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .imagen-bloque {
+      flex: 1;
+      min-width: 260px;
+    }
+    .imagen-titulo {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #a97550;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Layout focal + preview en columna */
+    .imagen-layout {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    /* Área de enfoque */
+    .focal-area {
+      position: relative;
+      cursor: crosshair;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+      display: inline-block;
+      user-select: none;
+      flex-shrink: 0;
+    }
+    .focal-area img {
+      display: block;
+      max-width: 340px;
+      max-height: 380px;
+      width: auto;
+      height: auto;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .focal-point {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(210, 50, 50, 0.85);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px rgba(210,50,50,0.35), 0 2px 8px rgba(0,0,0,0.35);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .focal-point::before,
+    .focal-point::after {
+      content: '';
+      position: absolute;
+      background: white;
+      top: 50%; left: 50%;
+    }
+    .focal-point::before { width: 2px; height: 10px; transform: translate(-50%,-50%); }
+    .focal-point::after  { width: 10px; height: 2px; transform: translate(-50%,-50%); }
+
+    /* Vista previa */
+    .preview-col { flex-shrink: 0; }
+    .preview-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #b8a090;
+      margin-bottom: 0.4rem;
+    }
+    .preview-card {
+      width: 220px;
+      height: 165px; /* 4:3 */
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(92,61,46,0.15);
+    }
+    .preview-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
+    .valor-display {
+      margin-top: 0.6rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      background: #faf0e8;
+      border: 1.5px solid #dac8b8;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      color: #5c3d2e;
+      display: inline-block;
+    }
+
+    /* ── Panel de exportación ──────────────────────────────── */
+    .export-panel {
+      background: white;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+      box-shadow: 0 2px 16px rgba(92,61,46,0.1);
+    }
+    .export-panel h2 {
+      font-family: Georgia, serif;
+      color: #7b4f2e;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .export-panel .nota {
+      color: #6d4c3d;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .export-panel .nota code {
+      background: #f0e0d0;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.82rem;
+    }
+    pre {
+      background: #1a1a2e;
+      color: #a8d8a0;
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.83rem;
+      line-height: 1.9;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    .btn-copiar {
+      background: #c4948a;
+      color: white;
+      border: none;
+      padding: 0.65rem 1.75rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+    .btn-copiar:hover { background: #7b4f2e; }
+    .btn-copiar.copiado { background: #4caa6e; }
+
+    .divisor {
+      border: none;
+      border-top: 1.5px solid #ede0d6;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cabecera">
+    <h1>Ajustar encuadre de pendientes</h1>
+    <p>
+      Haz clic o arrastra el <strong>punto rojo</strong> para elegir qué parte de la imagen se verá.
+      Cada pendiente tiene <strong>dos ajustes independientes</strong>: la foto principal (la tarjeta)
+      y la foto de detalle (la que aparece al abrir el pendiente).<br><br>
+      Los cambios se aplican solos al recargar <code>index.html</code>. No hace falta copiar nada a mano.
+    </p>
+  </div>
+
+  <div id="contenedor"></div>
+
+  <div class="export-panel">
+    <h2>Valores para catalog.js</h2>
+    <p class="nota">
+      Los ajustes ya están activos en la web local automáticamente.<br>
+      Si quieres fijarlos en <code>js/catalog.js</code> antes de publicar,
+      copia estos valores y reemplaza <code>posicion</code> y <code>posicionDetalle</code> de cada pendiente.
+    </p>
+    <pre id="export-pre"></pre>
+    <button class="btn-copiar" id="btn-copiar" onclick="copiarValores()">
+      Copiar al portapapeles
+    </button>
+  </div>
+
+  <script>
+    const PENDIENTES = [
+      { id: "blanca",   nombre: "BLANCA",
+        main:    "images/pendientes/P.Blanca-main.jpg",
+        detalle: "images/pendientes/P.Blanca-detalle.jpg" },
+      { id: "carmen",   nombre: "CARMEN",
+        main:    "images/pendientes/P.Carmen-main.jpg",
+        detalle: "images/pendientes/P.Carmen-detalle.jpg" },
+      { id: "maribel",  nombre: "MARIBEL",
+        main:    "images/pendientes/P.Maribel-main.jpg",
+        detalle: "images/pendientes/P.Maribel-detalle.jpg" },
+      { id: "marisa",   nombre: "MARISA",
+        main:    "images/pendientes/P.Marisa-main.jpg",
+        detalle: "images/pendientes/P.Marisa-detalle.jpg" },
+      { id: "paz",      nombre: "PAZ",
+        main:    "images/pendientes/P.Paz-main.jpg",
+        detalle: "images/pendientes/P.Paz-detalle.jpg" },
+      { id: "victoria", nombre: "VICTORIA",
+        main:    "images/pendientes/P.Victoria-main.jpg",
+        detalle: "images/pendientes/P.Victoria-detalle.jpg" },
+    ];
+
+    // ── Almacenamiento ─────────────────────────────────────────────────────
+    const KEY = "posiciones_pendientes_v1";
+    const datos = JSON.parse(localStorage.getItem(KEY) || "{}");
+
+    function cargar(key) {
+      return datos[key] || { fx: 50, fy: 50 };
+    }
+    function guardar(key, fx, fy) {
+      datos[key] = { fx, fy };
+      localStorage.setItem(KEY, JSON.stringify(datos));
+    }
+
+    function posStr(key) {
+      const { fx, fy } = datos[key] || { fx: 50, fy: 50 };
+      return `${Math.round(fx)}% ${Math.round(fy)}%`;
+    }
+
+    // ── Panel de exportación ───────────────────────────────────────────────
+    function actualizarExport() {
+      const lineas = PENDIENTES.flatMap(p => [
+        `  // ${p.nombre}`,
+        `  posicion:        "${posStr(p.id)}",`,
+        `  posicionDetalle: "${posStr(p.id + '_detalle')}",`,
+        '',
+      ]);
+      document.getElementById("export-pre").textContent = lineas.join("\n");
+    }
+
+    // ── Crear bloque de ajuste para una imagen ─────────────────────────────
+    function crearAjuste(contenedor, storageKey, srcImagen, labelTipo) {
+      const pos = cargar(storageKey);
+
+      const wrap = document.createElement("div");
+      wrap.className = "imagen-bloque";
+      wrap.innerHTML = `
+        <div class="imagen-titulo">${labelTipo}</div>
+        <div class="imagen-layout">
+          <div class="focal-area">
+            <img class="focal-img" src="${srcImagen}" alt="" />
+            <div class="focal-point"></div>
+          </div>
+          <div class="preview-col">
+            <div class="preview-label">Vista previa</div>
+            <div class="preview-card">
+              <img class="preview-img" src="${srcImagen}" alt="" />
+            </div>
+            <div class="valor-display">${posStr(storageKey)}</div>
+          </div>
+        </div>
+      `;
+      contenedor.appendChild(wrap);
+
+      // Usar querySelector dentro de wrap — así no depende de que esté en el DOM principal
+      const focalArea  = wrap.querySelector(".focal-area");
+      const dot        = wrap.querySelector(".focal-point");
+      const previewImg = wrap.querySelector(".preview-img");
+      const valorEl    = wrap.querySelector(".valor-display");
+      const imgEl      = wrap.querySelector(".focal-img");
+
+      function aplicar(fx, fy) {
+        fx = Math.max(0, Math.min(100, fx));
+        fy = Math.max(0, Math.min(100, fy));
+        guardar(storageKey, fx, fy);
+        dot.style.left = `${fx}%`;
+        dot.style.top  = `${fy}%`;
+        previewImg.style.objectPosition = posStr(storageKey);
+        valorEl.textContent = posStr(storageKey);
+        actualizarExport();
+      }
+
+      const init = () => aplicar(pos.fx, pos.fy);
+      if (imgEl.complete) init(); else imgEl.addEventListener("load", init);
+
+      function coords(e) {
+        const r = focalArea.getBoundingClientRect();
+        const cx = e.touches ? e.touches[0].clientX : e.clientX;
+        const cy = e.touches ? e.touches[0].clientY : e.clientY;
+        return { fx: (cx - r.left) / r.width * 100, fy: (cy - r.top) / r.height * 100 };
+      }
+
+      let drag = false;
+      focalArea.addEventListener("mousedown",  e => { drag = true;  const {fx,fy} = coords(e); aplicar(fx,fy); e.preventDefault(); });
+      document.addEventListener("mousemove",   e => { if (!drag) return; const {fx,fy} = coords(e); aplicar(fx,fy); });
+      document.addEventListener("mouseup",     () => { drag = false; });
+      focalArea.addEventListener("touchstart", e => { drag = true;  const {fx,fy} = coords(e); aplicar(fx,fy); e.preventDefault(); }, { passive: false });
+      document.addEventListener("touchmove",   e => { if (!drag) return; const {fx,fy} = coords(e); aplicar(fx,fy); }, { passive: true });
+      document.addEventListener("touchend",    () => { drag = false; });
+    }
+
+    // ── Crear bloque por pendiente ─────────────────────────────────────────
+    function crearBloque(p) {
+      const bloque = document.createElement("div");
+      bloque.className = "pendiente-bloque";
+
+      const titulo = document.createElement("div");
+      titulo.className = "pendiente-nombre";
+      titulo.textContent = p.nombre;
+      bloque.appendChild(titulo);
+
+      const fila = document.createElement("div");
+      fila.className = "imagenes-fila";
+      bloque.appendChild(fila);
+
+      crearAjuste(fila, p.id,              p.main,    "Foto principal (tarjeta)");
+
+      const divisor = document.createElement("div");
+      divisor.style.cssText = "width:1.5px;background:#ede0d6;flex-shrink:0;align-self:stretch;margin:0 0.5rem";
+      fila.appendChild(divisor);
+
+      crearAjuste(fila, p.id + "_detalle", p.detalle, "Foto de detalle (al abrir)");
+
+      document.getElementById("contenedor").appendChild(bloque);
+    }
+
+    // ── Copiar ─────────────────────────────────────────────────────────────
+    function copiarValores() {
+      navigator.clipboard.writeText(document.getElementById("export-pre").textContent).then(() => {
+        const btn = document.getElementById("btn-copiar");
+        btn.textContent = "¡Copiado!";
+        btn.classList.add("copiado");
+        setTimeout(() => { btn.textContent = "Copiar al portapapeles"; btn.classList.remove("copiado"); }, 2500);
+      });
+    }
+
+    // ── Arrancar ───────────────────────────────────────────────────────────
+    PENDIENTES.forEach(crearBloque);
+    actualizarExport();
+  </script>
+
+</body>
+</html>

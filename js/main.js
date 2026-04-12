@@ -1,3 +1,18 @@
+// ─── Posición de imagen ajustada con la herramienta visual ───────────────
+// Lee de localStorage (guardado por ajustar-fotos.html) y lo aplica en tiempo real.
+// esDetalle=true lee la posición de la imagen de detalle.
+function posicionGuardada(id, esDetalle = false) {
+  try {
+    const data = JSON.parse(localStorage.getItem("posiciones_pendientes_v1") || "{}");
+    const key = esDetalle ? id + "_detalle" : id;
+    if (data[key]) {
+      const { fx, fy } = data[key];
+      return `${Math.round(fx)}% ${Math.round(fy)}%`;
+    }
+  } catch (e) {}
+  return null;
+}
+
 // ─── Intenta la extensión alternativa si la imagen no carga ───────────────
 function intentarExtAlternativa(img) {
   const src = img.src;
@@ -6,55 +21,69 @@ function intentarExtAlternativa(img) {
   img.onerror = null; // evita bucle infinito si tampoco existe la alternativa
 }
 
-// ─── Estado de filtros ─────────────────────────────────────────────────────
+// ─── Estado ───────────────────────────────────────────────────────────────
+let catalogoActivo = "todos"; // "todos" | "collares" | "pendientes"
+
 const filtrosActivos = {
   colores: [],
-  largo: null,
+  largo: null,   // solo collares
+  tipo: null,    // solo pendientes
   estilos: [],
 };
 
 // ─── Render del catálogo ───────────────────────────────────────────────────
-function renderCatalogo(collares) {
+function renderCatalogo(items) {
   const grid = document.getElementById("catalogo-grid");
   if (!grid) return;
 
   grid.innerHTML = "";
 
-  if (collares.length === 0) {
+  if (items.length === 0) {
     grid.innerHTML = `
       <div class="sin-resultados">
-        <p>No hay collares que coincidan con tu búsqueda.</p>
+        <p>No hay piezas que coincidan con tu búsqueda.</p>
         <button onclick="limpiarFiltros()" class="btn-secundario">Ver todos</button>
       </div>`;
     return;
   }
 
-  collares.forEach((collar) => {
+  items.forEach((item) => {
     const card = document.createElement("article");
     card.className = "collar-card";
-    card.setAttribute("data-id", collar.id);
+    card.setAttribute("data-id", item.id);
 
-    const colorDots = collar.colores
+    const colorDots = item.colores
       .map((c) => `<span class="color-dot color-${c}" title="${c}"></span>`)
       .join("");
+
+    const esPendiente = PENDIENTES.some((p) => p.id === item.id);
+    let badgeText;
+    if (esPendiente) {
+      badgeText = item.tipo === "aros" ? "Aros" : "Colgantes";
+    } else {
+      badgeText = item.largo === "largo" ? "Collar largo" : "Collar corto";
+    }
+
+    const posicion = posicionGuardada(item.id) || item.posicion || "center center";
 
     card.innerHTML = `
       <div class="card-imagen-wrapper">
         <img
-          src="${collar.imagen}"
-          alt="Collar ${collar.nombre}"
+          src="${item.imagen}"
+          alt="${esPendiente ? "Pendientes" : "Collar"} ${item.nombre}"
           loading="lazy"
           onerror="intentarExtAlternativa(this)"
+          style="object-position: ${posicion}"
         />
-        <span class="card-badge">${collar.largo === "largo" ? "Collar largo" : "Collar corto"}</span>
+        <span class="card-badge">${badgeText}</span>
       </div>
       <div class="card-info">
         <div class="card-colores">${colorDots}</div>
-        <h3 class="card-nombre">${collar.nombre}</h3>
-        <p class="card-descripcion">${collar.descripcion}</p>
+        <h3 class="card-nombre">${item.nombre}</h3>
+        <p class="card-descripcion">${item.descripcion}</p>
         <div class="card-footer">
-          <span class="card-precio">${collar.precio} €</span>
-          <button class="btn-ver-mas" onclick="abrirModal('${collar.id}')">
+          <span class="card-precio">${item.precio} €</span>
+          <button class="btn-ver-mas" onclick="abrirModal('${item.id}')">
             Ver detalle
           </button>
         </div>
@@ -67,7 +96,10 @@ function renderCatalogo(collares) {
 
 // ─── Filtrado ──────────────────────────────────────────────────────────────
 function aplicarFiltros() {
-  let resultado = [...COLLARES];
+  let resultado =
+    catalogoActivo === "todos"     ? [...COLLARES, ...PENDIENTES] :
+    catalogoActivo === "pendientes" ? [...PENDIENTES] :
+                                      [...COLLARES];
 
   if (filtrosActivos.colores.length > 0) {
     resultado = resultado.filter((c) =>
@@ -75,8 +107,12 @@ function aplicarFiltros() {
     );
   }
 
-  if (filtrosActivos.largo) {
+  if (catalogoActivo === "collares" && filtrosActivos.largo) {
     resultado = resultado.filter((c) => c.largo === filtrosActivos.largo);
+  }
+
+  if (catalogoActivo === "pendientes" && filtrosActivos.tipo) {
+    resultado = resultado.filter((c) => c.tipo === filtrosActivos.tipo);
   }
 
   if (filtrosActivos.estilos.length > 0) {
@@ -92,58 +128,93 @@ function aplicarFiltros() {
 function limpiarFiltros() {
   filtrosActivos.colores = [];
   filtrosActivos.largo = null;
+  filtrosActivos.tipo = null;
   filtrosActivos.estilos = [];
 
   document.querySelectorAll(".filtro-btn.activo").forEach((btn) => btn.classList.remove("activo"));
-  document.querySelectorAll(".filtro-largo .filtro-btn").forEach((btn) => btn.classList.remove("activo"));
 
   aplicarFiltros();
 }
 
 function actualizarContador(n) {
   const contador = document.getElementById("resultado-contador");
-  if (contador) {
-    contador.textContent = n === COLLARES.length
-      ? `${n} collares`
-      : `${n} de ${COLLARES.length} collares`;
-  }
+  if (!contador) return;
+  const total =
+    catalogoActivo === "todos"      ? COLLARES.length + PENDIENTES.length :
+    catalogoActivo === "pendientes" ? PENDIENTES.length :
+                                      COLLARES.length;
+  const label =
+    catalogoActivo === "todos"      ? "piezas" :
+    catalogoActivo === "pendientes" ? "pendientes" :
+                                      "collares";
+  contador.textContent = n === total
+    ? `${n} ${label}`
+    : `${n} de ${total} ${label}`;
+}
+
+// ─── Cambio de tab ─────────────────────────────────────────────────────────
+function switchTab(tab) {
+  catalogoActivo = tab;
+
+  document.querySelectorAll(".tab-btn").forEach((btn) => {
+    const activo = btn.dataset.tab === tab;
+    btn.classList.toggle("activo", activo);
+    btn.setAttribute("aria-selected", activo);
+  });
+
+  document.querySelector(".filtros-grupo-largo")?.classList.toggle("oculto", tab !== "collares");
+  document.querySelector(".filtros-grupo-tipo")?.classList.toggle("oculto", tab !== "pendientes");
+
+  limpiarFiltros();
 }
 
 // ─── Modal de detalle ──────────────────────────────────────────────────────
 function abrirModal(id) {
-  const collar = COLLARES.find((c) => c.id === id);
-  if (!collar) return;
+  const item = [...COLLARES, ...PENDIENTES].find((c) => c.id === id);
+  if (!item) return;
+
+  const esPendiente = PENDIENTES.some((p) => p.id === id);
+  const tipoLabel = esPendiente ? "Pendientes" : "Collar";
+
+  const detalleLinea = esPendiente
+    ? `<p><strong>Tipo:</strong> ${item.tipo === "aros" ? "Aros" : "Colgantes"}</p>`
+    : `<p><strong>Largo:</strong> ${item.largo === "largo" ? "Collar largo" : "Collar corto"}</p>`;
 
   const modal = document.getElementById("modal-collar");
   const contenido = document.getElementById("modal-contenido");
+
+  const posMain    = posicionGuardada(item.id, false) || item.posicion || "center center";
+  const posDetalle = posicionGuardada(item.id, true)  || item.posicionDetalle || "center center";
 
   contenido.innerHTML = `
     <div class="modal-grid">
       <div class="modal-imagenes">
         <img
-          src="${collar.imagen}"
-          alt="Collar ${collar.nombre} puesto"
+          src="${item.imagen}"
+          alt="${tipoLabel} ${item.nombre}"
           class="modal-img-principal"
+          style="object-position: ${posMain}"
           onerror="intentarExtAlternativa(this)"
         />
         <img
-          src="${collar.imagenDetalle}"
-          alt="Detalle del collar ${collar.nombre}"
+          src="${item.imagenDetalle}"
+          alt="Detalle de ${item.nombre}"
           class="modal-img-detalle"
+          style="object-position: ${posDetalle}"
           onerror="intentarExtAlternativa(this)"
         />
       </div>
       <div class="modal-texto">
-        <h2>${collar.nombre}</h2>
-        <p class="modal-precio">${collar.precio} €</p>
-        <p class="modal-descripcion">${collar.descripcion}</p>
+        <h2>${item.nombre}</h2>
+        <p class="modal-precio">${item.precio} €</p>
+        <p class="modal-descripcion">${item.descripcion}</p>
         <div class="modal-detalles">
-          <p><strong>Materiales:</strong> ${collar.materiales}</p>
-          <p><strong>Largo:</strong> ${collar.largo === "largo" ? "Collar largo" : "Collar corto"}</p>
-          <p><strong>Ocasión:</strong> ${collar.ocasion}</p>
+          <p><strong>Materiales:</strong> ${item.materiales}</p>
+          ${detalleLinea}
+          <p><strong>Ocasión:</strong> ${item.ocasion}</p>
         </div>
         <div class="modal-acciones">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cristinagartesania@gmail.com&su=${encodeURIComponent('Interés en collar ' + collar.nombre)}&body=${encodeURIComponent('Hola, me gustaría más información sobre el collar ' + collar.nombre + ' (' + collar.precio + '€).')}"
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cristinagigato.artesania@gmail.com&su=${encodeURIComponent("Interés en " + tipoLabel.toLowerCase() + " " + item.nombre)}&body=${encodeURIComponent("Hola, me gustaría más información sobre " + tipoLabel.toLowerCase() + " " + item.nombre + " (" + item.precio + "€).")}"
              target="_blank"
              rel="noopener"
              class="btn-principal">
@@ -174,16 +245,34 @@ function toggleMenu() {
 }
 
 // ─── Formulario de personalización ────────────────────────────────────────
-function construirMensajePersonalizacion(datos) {
+function mostrarCamposPersonalizacion(tipoPieza) {
+  const camposCollar    = document.querySelector(".campos-collar");
+  const camposPendiente = document.querySelector(".campos-pendiente");
+  if (!camposCollar || !camposPendiente) return;
+
+  camposCollar.classList.toggle("oculto", tipoPieza !== "collar");
+  camposPendiente.classList.toggle("oculto", tipoPieza !== "pendiente");
+}
+
+function construirMensajeCollar(form) {
   return `Hola Cristina! Me gustaría encargar un collar personalizado con las siguientes preferencias:
 
-- Tipo: ${datos.tipo}
-- Largo: ${datos.largo}
-- Colores preferidos: ${datos.colores}
-- Materiales: ${datos.materiales}
-- Ocasión: ${datos.ocasion}
-- Presupuesto aproximado: ${datos.presupuesto}
-- Notas adicionales: ${datos.notas}
+- Tipo: ${form.tipo.value || "Sin especificar"}
+- Largo: ${form.largo.value || "Sin preferencia"}
+- Colores preferidos: ${form.colores.value || "Sin especificar"}
+- Materiales: ${form.materiales.value || "Sin preferencia"}
+- Ocasión: ${form.ocasion.value || "Sin especificar"}
+- Presupuesto aproximado: ${form.presupuesto.value || "Sin especificar"}
+- Notas adicionales: ${form.notas.value || "Sin notas adicionales"}
+
+¡Muchas gracias!`;
+}
+
+function construirMensajePendiente(form) {
+  return `Hola Cristina! Me gustaría encargar unos pendientes con las siguientes preferencias:
+
+- Modelo: ${form["modelo-pendiente"].value || "Sin especificar"}
+- Colores preferidos: ${form["colores-pendiente"].value || "Sin especificar"}
 
 ¡Muchas gracias!`;
 }
@@ -191,18 +280,23 @@ function construirMensajePersonalizacion(datos) {
 function enviarPersonalizacion(e) {
   e.preventDefault();
   const form = e.target;
-  const datos = {
-    tipo: form.tipo.value,
-    largo: form.largo.value,
-    colores: form.colores.value,
-    materiales: form.materiales.value,
-    ocasion: form.ocasion.value,
-    presupuesto: form.presupuesto.value,
-    notas: form.notas.value || "Sin notas adicionales",
-  };
+  const tipoPieza = form["tipo-pieza"].value;
 
-  const mensaje = encodeURIComponent(construirMensajePersonalizacion(datos));
-  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=cristinagartesania@gmail.com&su=${encodeURIComponent('Pedido collar personalizado')}&body=${mensaje}`;
+  if (!tipoPieza) {
+    form["tipo-pieza"].focus();
+    return;
+  }
+
+  let asunto, mensaje;
+  if (tipoPieza === "pendiente") {
+    asunto  = "Pedido pendientes personalizados";
+    mensaje = construirMensajePendiente(form);
+  } else {
+    asunto  = "Pedido collar personalizado";
+    mensaje = construirMensajeCollar(form);
+  }
+
+  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=cristinagigato.artesania@gmail.com&su=${encodeURIComponent(asunto)}&body=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank", "noopener");
 }
 
@@ -231,9 +325,9 @@ function initNavScroll() {
 
 // ─── Init ──────────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
-  // Render catálogo inicial
-  renderCatalogo(COLLARES);
-  actualizarContador(COLLARES.length);
+  // Render catálogo inicial (tab "Todos")
+  renderCatalogo([...COLLARES, ...PENDIENTES]);
+  actualizarContador(COLLARES.length + PENDIENTES.length);
 
   // Botones de filtro — colores
   document.querySelectorAll("[data-filtro-color]").forEach((btn) => {
@@ -249,13 +343,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Botones de filtro — largo
+  // Botones de filtro — largo (collares)
   document.querySelectorAll("[data-filtro-largo]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const largo = btn.dataset.filtroLargo;
       const yaActivo = filtrosActivos.largo === largo;
       document.querySelectorAll("[data-filtro-largo]").forEach((b) => b.classList.remove("activo"));
       filtrosActivos.largo = yaActivo ? null : largo;
+      if (!yaActivo) btn.classList.add("activo");
+      aplicarFiltros();
+    });
+  });
+
+  // Botones de filtro — tipo (pendientes)
+  document.querySelectorAll("[data-filtro-tipo]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tipo = btn.dataset.filtroTipo;
+      const yaActivo = filtrosActivos.tipo === tipo;
+      document.querySelectorAll("[data-filtro-tipo]").forEach((b) => b.classList.remove("activo"));
+      filtrosActivos.tipo = yaActivo ? null : tipo;
       if (!yaActivo) btn.classList.add("activo");
       aplicarFiltros();
     });
@@ -288,7 +394,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") cerrarModal();
   });
 
-  // Formulario personalización
+  // Formulario personalización — selector collar/pendiente
+  document.getElementById("tipo-pieza")?.addEventListener("change", (e) => {
+    mostrarCamposPersonalizacion(e.target.value);
+  });
+
+  // Formulario personalización — envío
   document.getElementById("form-personalizar")?.addEventListener("submit", enviarPersonalizacion);
 
   initSmoothScroll();

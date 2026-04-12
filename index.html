@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cristina G — Collares artesanales hechos a mano</title>
+  <title>Cristina G — Accesorios artesanales hechos a mano</title>
   <meta name="description" content="Collares hechos a mano con amor y dedicación. Cada pieza es única, tejida a mano con los mejores materiales. Diseños exclusivos para lucir en cualquier ocasión." />
 
   <!-- Fuentes de Google -->
@@ -20,7 +20,7 @@
   <header>
     <nav class="navbar" role="navigation" aria-label="Navegación principal">
       <div class="contenedor navbar-inner">
-        <a href="#hero" class="navbar-logo">Cristina G <span>— Collares artesanales</span></a>
+        <a href="#hero" class="navbar-logo">Maria Cristina Gigato <span>— Accesorios artesanales</span></a>
 
         <ul id="nav-links" role="list">
           <li><a href="#historia">Mi historia</a></li>
@@ -54,11 +54,11 @@
         <div class="hero-texto">
           <span class="seccion-etiqueta">✦ 100% Hecho a mano</span>
           <h1>
-            Collares tejidos a mano en Sevilla<br />
+            Accesorios tejidos a mano en Sevilla<br />
             para llevar contigo a donde <em>vayas</em>
           </h1>
           <p>
-            Cada collar es una historia en miniatura. Los tejo con paciencia, uno a uno,
+            Cada accesorio es una historia en miniatura. Los tejo con paciencia, uno a uno,
             eligiendo cada cuenta y cada cristal con mimo para que sea tuyo de verdad.
           </p>
           <div class="hero-acciones">
@@ -184,7 +184,20 @@ La creatividad no entiende de edades ni de fronteras. Y yo, desde Zahara hasta S
         <div class="seccion-titulo">
           <span class="seccion-etiqueta">✦ La colección</span>
           <h2>Encuentra el tuyo</h2>
-          <p>Filtra por color, largo o estilo hasta dar con el que te enamore.</p>
+          <p>Filtra por color, tipo o estilo hasta dar con el que te enamore.</p>
+        </div>
+
+        <!-- Tabs Todos / Collares / Pendientes -->
+        <div class="catalogo-tabs" role="tablist">
+          <button class="tab-btn activo" data-tab="todos" role="tab" aria-selected="true" onclick="switchTab('todos')">
+            Todos
+          </button>
+          <button class="tab-btn" data-tab="collares" role="tab" aria-selected="false" onclick="switchTab('collares')">
+            Collares
+          </button>
+          <button class="tab-btn" data-tab="pendientes" role="tab" aria-selected="false" onclick="switchTab('pendientes')">
+            Pendientes
+          </button>
         </div>
 
         <!-- Filtros -->
@@ -194,24 +207,52 @@ La creatividad no entiende de edades ni de fronteras. Y yo, desde Zahara hasta S
             <button class="filtro-btn color-filtro-btn" data-filtro-color="dorado">
               <span class="color-muestra color-dorado"></span> Dorado
             </button>
-            <button class="filtro-btn color-filtro-btn" data-filtro-color="perla">
-              <span class="color-muestra color-perla"></span> Perla
-            </button>
-            <button class="filtro-btn color-filtro-btn" data-filtro-color="pastel">
-              <span class="color-muestra color-pastel"></span> Pastel
-            </button>
             <button class="filtro-btn color-filtro-btn" data-filtro-color="multicolor">
               <span class="color-muestra color-multicolor"></span> Multicolor
-            </button>
-            <button class="filtro-btn color-filtro-btn" data-filtro-color="lavanda">
-              <span class="color-muestra color-lavanda"></span> Lavanda
             </button>
             <button class="filtro-btn color-filtro-btn" data-filtro-color="blanco">
               <span class="color-muestra color-blanco"></span> Blanco
             </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="beige">
+              <span class="color-muestra color-beige"></span> Beige
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="turquesa">
+              <span class="color-muestra color-turquesa"></span> Turquesa
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="verdoso">
+              <span class="color-muestra color-verdoso"></span> Verdoso
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="azulado">
+              <span class="color-muestra color-azulado"></span> Azulado
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="rosa-claro">
+              <span class="color-muestra color-rosa-claro"></span> Rosa claro
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="lavanda">
+              <span class="color-muestra color-lavanda"></span> Lavanda
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="gris">
+              <span class="color-muestra color-gris"></span> Gris
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="rojo">
+              <span class="color-muestra color-rojo"></span> Rojo
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="coral">
+              <span class="color-muestra color-coral"></span> Coral
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="naranja">
+              <span class="color-muestra color-naranja"></span> Naranja
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="negro">
+              <span class="color-muestra color-negro"></span> Negro
+            </button>
+            <button class="filtro-btn color-filtro-btn" data-filtro-color="plateado">
+              <span class="color-muestra color-plateado"></span> Plateado
+            </button>
           </div>
 
-          <div class="filtros-grupo">
+          <!-- Filtro largo: solo visible en collares -->
+          <div class="filtros-grupo filtros-grupo-largo oculto">
             <span class="filtros-label">Largo</span>
             <button class="filtro-btn" data-filtro-largo="corto">Collar corto</button>
             <button class="filtro-btn" data-filtro-largo="largo">Collar largo</button>
@@ -231,10 +272,15 @@ La creatividad no entiende de edades ni de fronteras. Y yo, desde Zahara hasta S
           </div>
         </div>
 
-        <!-- Grid de collares -->
-        <div id="catalogo-grid" role="list" aria-label="Collares disponibles">
+        <!-- Grid de productos -->
+        <div id="catalogo-grid" role="list" aria-label="Productos disponibles">
           <!-- Se genera desde catalog.js + main.js -->
         </div>
+
+        <p class="catalogo-nota-envio">
+          Todos los precios incluyen IVA y gastos de envío peninsular.
+          <strong>No incluye envío a Canarias.</strong>
+        </p>
       </div>
     </section>
 
@@ -250,9 +296,9 @@ La creatividad no entiende de edades ni de fronteras. Y yo, desde Zahara hasta S
               lo quieres, si prefieres algo discreto o que llame la atención. Yo me encargo del resto.
             </p>
             <ul class="personalizar-lista">
+              <li>Collares y pendientes a medida</li>
               <li>Colores a tu elección</li>
-              <li>Largo personalizado</li>
-              <li>Tipo de collar: corto o largo</li>
+              <li>Largo personalizado (en collares)</li>
               <li>Para regalar o para ti</li>
               <li>Presupuesto flexible</li>
               <li>Respuesta en 24-48h</li>
@@ -262,83 +308,121 @@ La creatividad no entiende de edades ni de fronteras. Y yo, desde Zahara hasta S
           <form id="form-personalizar" class="form-personalizar" novalidate>
             <h3>Cuéntame tu idea</h3>
 
-            <div class="form-fila-doble">
-              <div class="form-grupo">
-                <label for="tipo">Tipo de collar</label>
-                <select id="tipo" name="tipo" required>
-                  <option value="">Elige un tipo…</option>
-                  <option value="Collar corto clásico">Corto clásico</option>
-                  <option value="Collar largo">Largo</option>
-                  <option value="No lo sé, me lo recomiendas tú">No sé, recomiéndame tú</option>
-                </select>
-              </div>
-              <div class="form-grupo">
-                <label for="largo">Largo preferido</label>
-                <select id="largo" name="largo" required>
-                  <option value="">Elige…</option>
-                  <option value="Choker (pegado al cuello, ~38 cm)">Choker (~38 cm)</option>
-                  <option value="Corto (~45 cm)">Corto (~45 cm)</option>
-                  <option value="Medio (~55 cm)">Medio (~55 cm)</option>
-                  <option value="Largo (~70 cm o más)">Largo (~70 cm+)</option>
-                  <option value="Sin preferencia">Sin preferencia</option>
-                </select>
-              </div>
-            </div>
-
+            <!-- Paso 1: collar o pendiente -->
             <div class="form-grupo">
-              <label for="colores">Colores o tonos que te gustan</label>
-              <input
-                type="text"
-                id="colores"
-                name="colores"
-                placeholder="Ej: tonos tierra, pastel, dorado, azul…"
-                required
-              />
+              <label for="tipo-pieza">¿Qué quieres personalizar?</label>
+              <select id="tipo-pieza" name="tipo-pieza" required>
+                <option value="">Elige…</option>
+                <option value="collar">Collar</option>
+                <option value="pendiente">Pendientes</option>
+              </select>
             </div>
 
-            <div class="form-grupo">
-              <label for="materiales">Materiales o elementos favoritos</label>
-              <input
-                type="text"
-                id="materiales"
-                name="materiales"
-                placeholder="Ej: perlas, cristales, flores, sin preferencia…"
-              />
-            </div>
+            <!-- Campos collar -->
+            <div class="campos-collar oculto">
+              <div class="form-fila-doble">
+                <div class="form-grupo">
+                  <label for="tipo">Tipo de collar</label>
+                  <select id="tipo" name="tipo">
+                    <option value="">Elige un tipo…</option>
+                    <option value="Collar corto clásico">Corto clásico</option>
+                    <option value="Collar largo">Largo</option>
+                    <option value="No lo sé, me lo recomiendas tú">No sé, recomiéndame tú</option>
+                  </select>
+                </div>
+                <div class="form-grupo">
+                  <label for="largo">Largo preferido</label>
+                  <select id="largo" name="largo">
+                    <option value="">Elige…</option>
+                    <option value="Choker (pegado al cuello, ~38 cm)">Choker (~38 cm)</option>
+                    <option value="Corto (~45 cm)">Corto (~45 cm)</option>
+                    <option value="Medio (~55 cm)">Medio (~55 cm)</option>
+                    <option value="Largo (~70 cm o más)">Largo (~70 cm+)</option>
+                    <option value="Sin preferencia">Sin preferencia</option>
+                  </select>
+                </div>
+              </div>
 
-            <div class="form-fila-doble">
               <div class="form-grupo">
-                <label for="ocasion">Ocasión</label>
-                <select id="ocasion" name="ocasion" required>
-                  <option value="">Elige…</option>
-                  <option value="Día a día">Día a día</option>
-                  <option value="Trabajo / Oficina">Trabajo / Oficina</option>
-                  <option value="Evento o celebración">Evento / Celebración</option>
-                  <option value="Boda o comunión">Boda / Comunión</option>
-                  <option value="Regalo">Para regalar</option>
-                  <option value="Sin ocasión especial">Sin ocasión especial</option>
+                <label for="colores">Colores o tonos que te gustan</label>
+                <input
+                  type="text"
+                  id="colores"
+                  name="colores"
+                  placeholder="Ej: tonos tierra, pastel, dorado, azul…"
+                />
+              </div>
+
+              <div class="form-grupo">
+                <label for="materiales">Materiales o elementos favoritos</label>
+                <input
+                  type="text"
+                  id="materiales"
+                  name="materiales"
+                  placeholder="Ej: perlas, cristales, flores, sin preferencia…"
+                />
+              </div>
+
+              <div class="form-fila-doble">
+                <div class="form-grupo">
+                  <label for="ocasion">Ocasión</label>
+                  <select id="ocasion" name="ocasion">
+                    <option value="">Elige…</option>
+                    <option value="Día a día">Día a día</option>
+                    <option value="Trabajo / Oficina">Trabajo / Oficina</option>
+                    <option value="Evento o celebración">Evento / Celebración</option>
+                    <option value="Boda o comunión">Boda / Comunión</option>
+                    <option value="Regalo">Para regalar</option>
+                    <option value="Sin ocasión especial">Sin ocasión especial</option>
+                  </select>
+                </div>
+                <div class="form-grupo">
+                  <label for="presupuesto">Presupuesto aproximado</label>
+                  <select id="presupuesto" name="presupuesto">
+                    <option value="">Elige…</option>
+                    <option value="Menos de 20 €">Menos de 20 €</option>
+                    <option value="Entre 20 y 35 €">Entre 20 y 35 €</option>
+                    <option value="Entre 35 y 50 €">Entre 35 y 50 €</option>
+                    <option value="Más de 50 €">Más de 50 €</option>
+                    <option value="Sin límite claro">Sin límite claro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grupo">
+                <label for="notas">Algo más que quieras añadir</label>
+                <textarea
+                  id="notas"
+                  name="notas"
+                  placeholder="Cuéntame lo que quieras: a quién va dirigido, si hay algún color que no te guste, si lo necesitas para una fecha concreta…"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Campos pendiente -->
+            <div class="campos-pendiente oculto">
+              <div class="form-grupo">
+                <label for="modelo-pendiente">Modelo</label>
+                <select id="modelo-pendiente" name="modelo-pendiente">
+                  <option value="">Elige un modelo…</option>
+                  <option value="BLANCA">Blanca</option>
+                  <option value="CARMEN">Carmen</option>
+                  <option value="MARIBEL">Maribel</option>
+                  <option value="MARISA">Marisa</option>
+                  <option value="PAZ">Paz</option>
+                  <option value="VICTORIA">Victoria</option>
                 </select>
               </div>
-              <div class="form-grupo">
-                <label for="presupuesto">Presupuesto aproximado</label>
-                <select id="presupuesto" name="presupuesto" required>
-                  <option value="">Elige…</option>
-                  <option value="Menos de 20 €">Menos de 20 €</option>
-                  <option value="Entre 20 y 35 €">Entre 20 y 35 €</option>
-                  <option value="Entre 35 y 50 €">Entre 35 y 50 €</option>
-                  <option value="Más de 50 €">Más de 50 €</option>
-                  <option value="Sin límite claro">Sin límite claro</option>
-                </select>
-              </div>
-            </div>
 
-            <div class="form-grupo">
-              <label for="notas">Algo más que quieras añadir</label>
-              <textarea
-                id="notas"
-                name="notas"
-                placeholder="Cuéntame lo que quieras: a quién va dirigido, si hay algún color que no te guste, si lo necesitas para una fecha concreta…"
-              ></textarea>
+              <div class="form-grupo">
+                <label for="colores-pendiente">Colores o tonos que te gustan</label>
+                <input
+                  type="text"
+                  id="colores-pendiente"
+                  name="colores-pendiente"
+                  placeholder="Ej: dorado, pastel, blanco, multicolor…"
+                />
+              </div>
             </div>
 
             <button type="submit" class="btn-principal">
@@ -416,7 +500,7 @@ La creatividad no entiende de edades ni de fronteras. Y yo, desde Zahara hasta S
           y te cuento todo sobre el collar que te ha llamado la atención.
         </p>
         <div class="contacto-acciones">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cristinagartesania@gmail.com" target="_blank" rel="noopener" class="btn-principal">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cristinagigato.artesania@gmail.com" target="_blank" rel="noopener" class="btn-principal">
             Escribir un email
           </a>
         </div>
@@ -426,7 +510,7 @@ La creatividad no entiende de edades ni de fronteras. Y yo, desde Zahara hasta S
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
             </svg>
-            cristinagartesania@gmail.com
+            cristinagigato.artesania@gmail.com
           </div>
           <div class="contacto-item">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">

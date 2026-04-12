@@ -11,29 +11,38 @@ images/
 │   ├── cristina-trabajando.jpg  ← Tu foto trabajando / en tu mesa
 │   └── manos-tejiendo.jpg       ← Detalle de tus manos tejiendo (opcional)
 │
-└── collares/
-    ├── liz-main.jpg             ← LIZ puesto en modelo
-    ├── liz-detalle.jpg          ← LIZ sobre superficie / detalle del trabajo
-    ├── barbara-main.jpg
-    ├── barbara-detalle.jpg
-    ├── grace-main.jpg
-    ├── grace-detalle.jpg
-    ├── penelope-main.jpg
-    ├── penelope-detalle.jpg
-    ├── ingrid-main.jpg
-    ├── ingrid-detalle.jpg
-    ├── nicole-main.jpg
-    └── nicole-detalle.jpg
+├── collares/
+│   ├── liz-main.jpg             ← LIZ puesto en modelo
+│   ├── liz-detalle.jpg          ← LIZ sobre superficie / detalle del trabajo
+│   ├── barbara-main.jpg
+│   ├── barbara-detalle.jpg
+│   ├── grace-main.jpg
+│   ├── grace-detalle.jpg
+│   ├── penelope-main.jpg
+│   ├── penelope-detalle.jpg
+│   ├── ingrid-main.jpg
+│   ├── ingrid-detalle.jpg
+│   ├── nicole-main.jpg
+│   └── nicole-detalle.jpg
+│
+└── pendientes/
+    ├── [nombre]-main.jpg        ← Pendiente puesto en modelo (foto principal)
+    └── [nombre]-detalle.jpg     ← Pendiente sobre superficie / detalle del trabajo
 ```
+
+> **Naming convention para pendientes:** usa el nombre del pendiente en minúsculas y sin tildes,
+> seguido de `-main` o `-detalle`. Por ejemplo: `sevilla-main.jpg`, `sevilla-detalle.jpg`.
 
 ## Recomendaciones de tamaño
 
-| Uso            | Tamaño recomendado | Proporción |
-|----------------|--------------------|------------|
-| Hero           | 900×1125 px        | 4:5        |
-| Historia       | 750×1000 px        | 3:4        |
-| Card catálogo  | 600×450 px         | 4:3        |
-| Detalle modal  | 600×450 px         | 4:3        |
+| Uso                    | Tamaño recomendado | Proporción |
+|------------------------|--------------------|------------|
+| Hero                   | 900×1125 px        | 4:5        |
+| Historia               | 750×1000 px        | 3:4        |
+| Card catálogo (collar) | 600×450 px         | 4:3        |
+| Detalle modal (collar) | 600×450 px         | 4:3        |
+| Card catálogo (pendiente) | 600×450 px      | 4:3        |
+| Detalle modal (pendiente) | 600×450 px      | 4:3        |
 
 ## Consejos
 

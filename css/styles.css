@@ -390,6 +390,38 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 #coleccion {
   background-color: var(--crema);
 }
+
+/* Tabs Collares / Pendientes */
+.catalogo-tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.tab-btn {
+  padding: 0.6rem 2.25rem;
+  border: 2px solid var(--malva);
+  border-radius: 50px;
+  background-color: transparent;
+  color: var(--marron);
+  font-family: var(--fuente-texto);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transicion);
+  letter-spacing: 0.03em;
+}
+.tab-btn:hover,
+.tab-btn.activo {
+  background-color: var(--malva);
+  color: var(--blanco);
+}
+
+/* Utilidad de visibilidad */
+.oculto {
+  display: none !important;
+}
+
 .filtros-wrapper {
   background-color: var(--blanco);
   border-radius: var(--radio);
@@ -443,12 +475,21 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   border-radius: 50%;
   border: 1.5px solid rgba(0,0,0,0.1);
 }
-.color-dorado   { background: linear-gradient(135deg, #d4af6e, #e8cc8a); }
-.color-perla    { background: linear-gradient(135deg, #f5f0e8, #e8dfd0); }
-.color-pastel   { background: linear-gradient(135deg, #f0c8c0, #c8ddf0); }
+.color-dorado     { background: linear-gradient(135deg, #d4af6e, #e8cc8a); }
 .color-multicolor { background: linear-gradient(135deg, #f0c8c0, #c8f0d4, #c8c8f0); }
-.color-lavanda  { background: linear-gradient(135deg, #c8bce8, #d4c8f0); }
-.color-blanco   { background: linear-gradient(135deg, #fafafa, #f0ece8); }
+.color-blanco     { background: linear-gradient(135deg, #fafafa, #f0ece8); }
+.color-turquesa   { background: linear-gradient(135deg, #3ecfbe, #20b0a0); }
+.color-rojo       { background: linear-gradient(135deg, #d04040, #b02020); }
+.color-coral      { background: linear-gradient(135deg, #e87868, #d05848); }
+.color-naranja    { background: linear-gradient(135deg, #e8943a, #c87020); }
+.color-negro      { background: linear-gradient(135deg, #484848, #282828); }
+.color-plateado   { background: linear-gradient(135deg, #c8c8c8, #a8a8a8); }
+.color-beige      { background: linear-gradient(135deg, #e8d9c4, #d4c0a0); }
+.color-verdoso    { background: linear-gradient(135deg, #80b890, #5a9870); }
+.color-azulado    { background: linear-gradient(135deg, #80b0d8, #5890c0); }
+.color-rosa-claro { background: linear-gradient(135deg, #e8a0b8, #d080a0); }
+.color-lavanda    { background: linear-gradient(135deg, #c8bce8, #a898d0); }
+.color-gris       { background: linear-gradient(135deg, #b8b8c0, #909098); }
 
 /* Los puntos dentro de las cards */
 .color-dot {
@@ -458,12 +499,29 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   border-radius: 50%;
   border: 1px solid rgba(0,0,0,0.1);
 }
-.color-dot.color-dorado   { background: linear-gradient(135deg, #d4af6e, #e8cc8a); }
-.color-dot.color-perla    { background: linear-gradient(135deg, #f5f0e8, #e8dfd0); }
-.color-dot.color-pastel   { background: linear-gradient(135deg, #f0c8c0, #c8ddf0); }
+.color-dot.color-dorado    { background: linear-gradient(135deg, #d4af6e, #e8cc8a); }
 .color-dot.color-multicolor { background: linear-gradient(135deg, #f0c8c0, #c8f0d4); }
-.color-dot.color-lavanda  { background: linear-gradient(135deg, #c8bce8, #d4c8f0); }
-.color-dot.color-blanco   { background: linear-gradient(135deg, #fafafa, #f0ece8); }
+.color-dot.color-blanco    { background: linear-gradient(135deg, #fafafa, #f0ece8); }
+.color-dot.color-turquesa  { background: linear-gradient(135deg, #3ecfbe, #20b0a0); }
+.color-dot.color-rojo      { background: linear-gradient(135deg, #d04040, #b02020); }
+.color-dot.color-coral     { background: linear-gradient(135deg, #e87868, #d05848); }
+.color-dot.color-naranja   { background: linear-gradient(135deg, #e8943a, #c87020); }
+.color-dot.color-negro     { background: linear-gradient(135deg, #484848, #282828); }
+.color-dot.color-plateado  { background: linear-gradient(135deg, #c8c8c8, #a8a8a8); }
+.color-dot.color-beige     { background: linear-gradient(135deg, #e8d9c4, #d4c0a0); }
+.color-dot.color-verdoso    { background: linear-gradient(135deg, #80b890, #5a9870); }
+.color-dot.color-azulado    { background: linear-gradient(135deg, #80b0d8, #5890c0); }
+.color-dot.color-rosa-claro { background: linear-gradient(135deg, #e8a0b8, #d080a0); }
+.color-dot.color-lavanda    { background: linear-gradient(135deg, #c8bce8, #a898d0); }
+.color-dot.color-gris       { background: linear-gradient(135deg, #b8b8c0, #909098); }
+
+.catalogo-nota-envio {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.83rem;
+  color: #8a6a5a;
+  line-height: 1.5;
+}
 
 .filtros-footer {
   display: flex;

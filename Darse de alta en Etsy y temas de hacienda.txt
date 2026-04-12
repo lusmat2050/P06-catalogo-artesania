@@ -1,0 +1,46 @@
+Tu tienda en Etsy: datos y pasos a seguir
+Abrir una tienda en Etsy es un proceso muy sencillo, y lo más importante es que no se necesita ningún tipo de licencia comercial para empezar.
+
+Estos son los datos que te pedirán para crear la cuenta:
+
+Lo esencial: Dirección de correo electrónico, nombre y apellidos, y una contraseña.
+
+Para tu tienda: Tendrás que elegir un nombre para la tienda, definir el país y la divisa (en tu caso, España y euros), y escribir una breve biografía o descripción.
+
+Datos fiscales: Etsy te pedirá tu NIF (Número de Identificación Fiscal), que es tu DNI para extranjeros. Este dato es necesario por normativa europea.
+
+Para cobrar tus ventas: Deberás proporcionar los datos de una cuenta bancaria donde quieras recibir el dinero de tus ventas.
+
+El proceso es casi automático y la plataforma te va guiando en cada paso.
+
+💰 ¿Cuánto cuesta vender en Etsy?
+Etsy funciona con un modelo de "pago por uso", así que no pagas nada hasta que no vendes. Es muy transparente y no tiene comisiones ocultas. Los gastos principales son:
+
+Tarifa de publicación: 0,17 € por cada producto que publiques. El anuncio dura 4 meses o hasta que se venda.
+
+Tarifa por transacción: Cuando haces una venta, Etsy se queda un 6,5% del precio de venta.
+
+Tarifa por procesamiento de pago: Por gestionar el pago con tarjeta o PayPal, se aplica un 4% + 0,30 € sobre el total de la venta.
+
+🏛️ La parte fiscal: ¿qué hay que declarar?
+Entiendo que esta es la mayor preocupación. La normativa en España para este tipo de ventas online puede ser un poco liosa, así que vamos a intentar simplificarla.
+
+Para empezar, es importante que sepas que la persona que va a vender, al no cobrar una pensión, es posible que no esté dada de alta como autónoma. Y esa es la clave. La obligación de declarar las ventas depende de dos factores: la frecuencia y el volumen de ingresos.
+
+Etsy y Hacienda: la nueva normativa DAC7
+Hace unos años entró en vigor una directiva europea (la DAC7) que obliga a plataformas como Etsy a informar a Hacienda sobre los vendedores que superen ciertos umbrales. Específicamente, Etsy comunicará tus datos a la Agencia Tributaria si en un año natural superas 30 ventas o ingresas más de 2.000 € (después de impuestos y tarifas de la plataforma).
+Esto no significa que tengas que pagar impuestos sí o sí, pero sí que Hacienda tendrá constancia de tu actividad.
+
+El caso de ingresos muy pequeños (ventas ocasionales)
+Si la actividad es meramente testimonial (por ejemplo, vender cuatro o cinco trajes al año), los ingresos serán probablemente muy bajos. En estos casos, no habría obligación de darse de alta como autónomo. Esa obligación surge cuando la actividad es habitual, profesional y se obtienen beneficios.
+Sin embargo, estos ingresos, aunque sean pequeños, deben declararse en la Declaración de la Renta (IRPF), pero tributarían como "ganancias patrimoniales" o "rendimientos de actividades económicas", no como ingresos de autónomo. El umbral que marca Hacienda para no tener que presentar la declaración de la renta es de 15.876 € anuales (si tienes más de un pagador). Como verás, es una cantidad muy superior a lo que se podría ganar con unas pocas ventas.
+
+En resumen: Para una actividad de venta esporádica, con ingresos muy bajos, no sería necesario darse de alta como autónomo. La información de tus ventas llegará a Hacienda si superas los umbrales de Etsy, pero no implicará una carga fiscal relevante. Eso sí, si la actividad crece y se vuelve más regular, sí que habría que consultar a un asesor para darse de alta.
+
+💎 En resumen: lo que te llevas
+Espero que esto te sirva de guía. Lo más importante es que, para empezar, no hay que tener miedo al papeleo. El proceso con Etsy es sencillo y los costes son muy bajos. Y en el plano fiscal, para un proyecto pequeño y esporádico, las obligaciones son mínimas.
+
+Como es un tema delicado y las leyes pueden cambiar, si quieres estar completamente segura o el proyecto empieza a funcionar mejor de lo esperado, lo más recomendable es que consultes con un asesor fiscal. Él podrá darte un consejo personalizado y actualizado a tu situación concreta.
+
+Mucha suerte con el proyecto, y si te surge cualquier otra duda, aquí estoy.
+
