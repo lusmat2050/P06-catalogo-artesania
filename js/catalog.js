@@ -120,7 +120,8 @@ const PENDIENTES = [
     precio: 54,
     imagen: "images/pendientes/P.Blanca-main.jpg",
     imagenDetalle: "images/pendientes/P.Blanca-detalle.jpg",
-    posicion: "center top",
+    posicion: "51% 28%",
+    posicionDetalle: "67% 63%",
     descripcion:
       "Pendientes colgantes en blanco nacarado, ligeros y delicados como las flores del campo. Su pureza los hace perfectos para cualquier ocasión.",
     colores: ["dorado", "turquesa"],
@@ -135,7 +136,8 @@ const PENDIENTES = [
     precio: 69,
     imagen: "images/pendientes/P.Carmen-main.jpg",
     imagenDetalle: "images/pendientes/P.Carmen-detalle.jpg",
-    posicion: "center top",
+    posicion: "55% 25%",
+    posicionDetalle: "58% 53%",
     descripcion:
       "Pendientes colgantes de inspiración flamenca con detalles dorados que capturan la luz de la Feria. Un homenaje a la artesanía sevillana.",
     colores: ["dorado", "rojo"],
@@ -150,7 +152,8 @@ const PENDIENTES = [
     precio: 69,
     imagen: "images/pendientes/P.Maribel-main.jpg",
     imagenDetalle: "images/pendientes/P.Maribel-detalle.jpg",
-    posicion: "center top",
+    posicion: "50% 31%",
+    posicionDetalle: "61% 68%",
     descripcion:
       "colgante con cuentas en tonos pastel y lavanda tejidos a mano. Coloridos, alegres y llenos de la energía de un jardín en primavera.",
     colores: ["dorado", "turquesa", "coral", "naranja"],
@@ -165,7 +168,8 @@ const PENDIENTES = [
     precio: 69,
     imagen: "images/pendientes/P.Marisa-main.jpg",
     imagenDetalle: "images/pendientes/P.Marisa-detalle.jpg",
-    posicion: "center top",
+    posicion: "35% 47%",
+    posicionDetalle: "62% 43%",
     descripcion:
       "Colgante dorados con perlas que combinan la elegancia clásica con el toque artesanal. Una pieza atemporal que nunca pasa de moda.",
     colores: ["dorado", "negro"],
@@ -180,7 +184,8 @@ const PENDIENTES = [
     precio: 54,
     imagen: "images/pendientes/P.Paz-main.jpg",
     imagenDetalle: "images/pendientes/P.Paz-detalle.jpg",
-    posicion: "center top",
+    posicion: "38% 49%",
+    posicionDetalle: "50% 50%",
     descripcion:
       "Pendiente colgante en tonos suaves que transmiten calma y feminidad. Ligeros como el viento, ideales para el día a día.",
     colores: ["blanco", "plateado", "turquesa"],
@@ -195,7 +200,8 @@ const PENDIENTES = [
     precio: 69,
     imagen: "images/pendientes/P.Victoria-main.jpg",
     imagenDetalle: "images/pendientes/P.Victoria-detalle.jpg",
-    posicion: "center top",
+    posicion: "50% 28%",
+    posicionDetalle: "43% 55%",
     descripcion:
       "Pendientes colgantes elaborados con cristales y cuentas doradas. Una joya artesanal diseñada para brillar en las celebraciones más especiales.",
     colores: ["blanco", "dorado", "beige"],
