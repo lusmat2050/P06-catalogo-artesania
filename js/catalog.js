@@ -100,7 +100,7 @@ const COLLARES = [
     imagenDetalle: "images/collares/nicole-detalle.png",
     descripcion:
       "Collar largo sofisticado que juega con la luz y la textura. Diseñado para la mujer que aprecia la elegancia modular y el detalle artesanal.",
-    colores: ["blanco", "dorado", "rosa-claro", "verdoso", "azulado", "beige"],
+    colores: ["blanco", "dorado", "multicolor", "rosa-claro", "verdoso", "azulado", "beige"],
     largo: "largo",
     estilos: ["elegante", "romantico"],
     materiales: "Cuentas pastel y blanco nacarado, diseño modular artesanal",
