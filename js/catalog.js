@@ -20,7 +20,7 @@ const COLLARES = [
   {
     id: "liz",
     nombre: "LIZ",
-    precio: 69,
+    precio: 49,
     imagen: "images/collares/liz-main.jpg",
     imagenDetalle: "images/collares/liz-detalle.jpg",
     descripcion:
@@ -35,7 +35,7 @@ const COLLARES = [
   {
     id: "barbara",
     nombre: "BARBARA",
-    precio: 51,
+    precio: 32,
     imagen: "images/collares/barbara-main.png",
     imagenDetalle: "images/collares/barbara-detalle.png",
     descripcion:
@@ -50,7 +50,7 @@ const COLLARES = [
   {
     id: "grace",
     nombre: "GRACE",
-    precio: 41,
+    precio: 24,
     imagen: "images/collares/grace-main.png",
     imagenDetalle: "images/collares/grace-detalle.png",
     descripcion:
@@ -65,7 +65,7 @@ const COLLARES = [
   {
     id: "penelope",
     nombre: "PENÉLOPE",
-    precio: 29,
+    precio: 14,
     imagen: "images/collares/penelope-main.png",
     imagenDetalle: "images/collares/penelope-detalle.png",
     descripcion:
@@ -80,7 +80,7 @@ const COLLARES = [
   {
     id: "ingrid",
     nombre: "INGRID",
-    precio: 45,
+    precio: 27,
     imagen: "images/collares/ingrid-main.png",
     imagenDetalle: "images/collares/ingrid-detalle.png",
     descripcion:
@@ -95,7 +95,7 @@ const COLLARES = [
   {
     id: "nicole",
     nombre: "NICOLE",
-    precio: 44,
+    precio: 26,
     imagen: "images/collares/nicole-main.png",
     imagenDetalle: "images/collares/nicole-detalle.png",
     descripcion:
@@ -117,7 +117,7 @@ const PENDIENTES = [
   {
     id: "blanca",
     nombre: "BLANCA",
-    precio: 54,
+    precio: 35,
     imagen: "images/pendientes/P.Blanca-main.jpg",
     imagenDetalle: "images/pendientes/P.Blanca-detalle.jpg",
     posicion: "51% 28%",
@@ -133,7 +133,7 @@ const PENDIENTES = [
   {
     id: "paz",
     nombre: "PAZ",
-    precio: 54,
+    precio: 35,
     imagen: "images/pendientes/P.Paz-main.jpg",
     imagenDetalle: "images/pendientes/P.Paz-detalle.jpg",
     posicion: "38% 49%",
@@ -149,7 +149,7 @@ const PENDIENTES = [
   {
     id: "maribel",
     nombre: "MARIBEL",
-    precio: 69,
+    precio: 48,
     imagen: "images/pendientes/P.Maribel-main.jpg",
     imagenDetalle: "images/pendientes/P.Maribel-detalle.jpg",
     posicion: "50% 31%",
@@ -165,7 +165,7 @@ const PENDIENTES = [
   {
     id: "marisa",
     nombre: "MARISA",
-    precio: 69,
+    precio: 48,
     imagen: "images/pendientes/P.Marisa-main.jpg",
     imagenDetalle: "images/pendientes/P.Marisa-detalle.jpg",
     posicion: "35% 47%",
@@ -181,7 +181,7 @@ const PENDIENTES = [
   {
     id: "carmen",
     nombre: "CARMEN",
-    precio: 69,
+    precio: 48,
     imagen: "images/pendientes/P.Carmen-main.jpg",
     imagenDetalle: "images/pendientes/P.Carmen-detalle.jpg",
     posicion: "55% 25%",
@@ -197,7 +197,7 @@ const PENDIENTES = [
   {
     id: "victoria",
     nombre: "VICTORIA",
-    precio: 69,
+    precio: 48,
     imagen: "images/pendientes/P.Victoria-main.jpg",
     imagenDetalle: "images/pendientes/P.Victoria-detalle.jpg",
     posicion: "50% 28%",
