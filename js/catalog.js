@@ -123,7 +123,7 @@ const PENDIENTES = [
     posicion: "51% 28%",
     posicionDetalle: "67% 63%",
     descripcion:
-      "Pendientes colgantes en blanco nacarado, ligeros y delicados como las flores del campo. Su pureza los hace perfectos para cualquier ocasión.",
+      "Pendientes colgantes en blanco y turquesa, ligeros y delicados como las flores del campo. Su pureza los hace perfectos para cualquier ocasión.",
     colores: ["dorado", "turquesa"],
     tipo: "colgantes",
     estilos: ["elegante", "romantico"],
