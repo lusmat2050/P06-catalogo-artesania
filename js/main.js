@@ -214,12 +214,6 @@ function abrirModal(id) {
           <p><strong>Ocasión:</strong> ${item.ocasion}</p>
         </div>
         <div class="modal-acciones">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cristinagigato.artesania@gmail.com&su=${encodeURIComponent("Interés en " + tipoLabel.toLowerCase() + " " + item.nombre)}&body=${encodeURIComponent("Hola, me gustaría más información sobre " + tipoLabel.toLowerCase() + " " + item.nombre + " (" + item.precio + "€).")}"
-             target="_blank"
-             rel="noopener"
-             class="btn-principal">
-            Pedir información
-          </a>
           <button class="btn-secundario" onclick="cerrarModal()">Cerrar</button>
         </div>
       </div>
