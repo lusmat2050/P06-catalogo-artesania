@@ -139,7 +139,7 @@ const PENDIENTES = [
     posicion: "38% 49%",
     posicionDetalle: "50% 50%",
     descripcion:
-      "Pendiente colgante en tonos suaves que transmiten calma y feminidad. Ligeros como el viento, ideales para el día a día.",
+      "Pendiente colgante en tonos suaves que transmiten calma y feminidad. Ligeros como el viento, ideales para todo tipo de ocasiones.",
     colores: ["blanco", "plateado", "turquesa"],
     tipo: "colgantes",
     estilos: ["romantico", "bohemio"],
@@ -155,7 +155,7 @@ const PENDIENTES = [
     posicion: "50% 31%",
     posicionDetalle: "61% 68%",
     descripcion:
-      "colgante con cuentas en tonos pastel y lavanda tejidos a mano. Coloridos, alegres y llenos de la energía de un jardín en primavera.",
+      "Colgante con cuentas en tonos pastel y lavanda tejidos a mano. Coloridos, alegres y llenos de la energía de un jardín en primavera.",
     colores: ["dorado", "turquesa", "coral", "naranja"],
     tipo: "colgantes",
     estilos: ["romantico", "bohemio"],
@@ -203,7 +203,7 @@ const PENDIENTES = [
     posicion: "50% 28%",
     posicionDetalle: "43% 55%",
     descripcion:
-      "Pendientes colgantes elaborados con cristales y cuentas doradas. Una joya artesanal diseñada para brillar en las celebraciones más especiales.",
+      "Pendientes colgantes elaborados con cristales y cuentas nacar. Una joya artesanal diseñada para brillar en las celebraciones más especiales.",
     colores: ["blanco", "dorado", "beige"],
     tipo: "colgantes",
     estilos: ["elegante", "sofisticado"],
