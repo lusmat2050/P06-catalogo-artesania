@@ -955,9 +955,7 @@ footer strong { opacity: 1; color: var(--malva-claro); }
   /* Si la imagen no existe, el img queda invisible pero el contenedor mantiene tamaño */
   min-height: 0;
 }
-.hero-imagen-wrapper img[src="images/hero/hero-collares.jpg"]:not([complete]) {
-  opacity: 0;
-}
+
 
 .historia-imagen {
   background-color: var(--crema-oscuro);
