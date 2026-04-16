@@ -1,4 +1,4 @@
-// ─── Posición de imagen ajustada con la herramienta visual ───────────────
+// ─── Posición/zoom guardados con la herramienta visual ────────────────────
 // Lee de localStorage (guardado por ajustar-fotos.html) y lo aplica en tiempo real.
 // esDetalle=true lee la posición de la imagen de detalle.
 function posicionGuardada(id, esDetalle = false) {
@@ -9,6 +9,15 @@ function posicionGuardada(id, esDetalle = false) {
       const { fx, fy } = data[key];
       return `${Math.round(fx)}% ${Math.round(fy)}%`;
     }
+  } catch (e) {}
+  return null;
+}
+
+function zoomGuardado(id, esDetalle = false) {
+  try {
+    const data = JSON.parse(localStorage.getItem("posiciones_pendientes_v1") || "{}");
+    const key = esDetalle ? id + "_detalle" : id;
+    if (data[key] && data[key].zoom != null) return data[key].zoom;
   } catch (e) {}
   return null;
 }
@@ -65,6 +74,7 @@ function renderCatalogo(items) {
     }
 
     const posicion = posicionGuardada(item.id) || item.posicion || "center center";
+    const zoom = zoomGuardado(item.id) || item.posicionZoom || 1;
 
     card.innerHTML = `
       <div class="card-imagen-wrapper">
@@ -73,7 +83,7 @@ function renderCatalogo(items) {
           alt="${esPendiente ? "Pendientes" : "Collar"} ${item.nombre}"
           loading="lazy"
           onerror="intentarExtAlternativa(this)"
-          style="object-position: ${posicion}"
+          style="object-position: ${posicion}; transform-origin: ${posicion}; --img-zoom: ${zoom}"
         />
         <span class="card-badge">${badgeText}</span>
       </div>
@@ -183,8 +193,10 @@ function abrirModal(id) {
   const modal = document.getElementById("modal-collar");
   const contenido = document.getElementById("modal-contenido");
 
-  const posMain    = posicionGuardada(item.id, false) || item.posicion || "center center";
-  const posDetalle = posicionGuardada(item.id, true)  || item.posicionDetalle || "center center";
+  const posMain       = posicionGuardada(item.id, false) || item.posicion       || "center center";
+  const posDetalle    = posicionGuardada(item.id, true)  || item.posicionDetalle || "center center";
+  const zoomMain      = zoomGuardado(item.id, false) || item.posicionZoom        || 1;
+  const zoomDetalle   = zoomGuardado(item.id, true)  || item.posicionDetalleZoom || 1;
 
   contenido.innerHTML = `
     <div class="modal-grid">
@@ -193,14 +205,14 @@ function abrirModal(id) {
           src="${item.imagen}"
           alt="${tipoLabel} ${item.nombre}"
           class="modal-img-principal"
-          style="object-position: ${posMain}"
+          style="object-position: ${posMain}; transform: scale(${zoomMain}); transform-origin: ${posMain}"
           onerror="intentarExtAlternativa(this)"
         />
         <img
           src="${item.imagenDetalle}"
           alt="Detalle de ${item.nombre}"
           class="modal-img-detalle"
-          style="object-position: ${posDetalle}"
+          style="object-position: ${posDetalle}; transform: scale(${zoomDetalle}); transform-origin: ${posDetalle}"
           onerror="intentarExtAlternativa(this)"
         />
       </div>

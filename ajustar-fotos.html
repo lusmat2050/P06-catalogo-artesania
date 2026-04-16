@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ajustar encuadre — Pendientes</title>
+  <title>Ajustar encuadre — Collares y Pendientes</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -37,8 +37,29 @@
       font-size: 0.85rem;
     }
 
-    /* ── Bloque por pendiente ──────────────────────────────── */
-    .pendiente-bloque {
+    /* ── Cabecera de sección ──────────────────────────────── */
+    .seccion-header {
+      max-width: 960px;
+      margin: 2rem auto 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .seccion-header h2 {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      color: #7b4f2e;
+      white-space: nowrap;
+    }
+    .seccion-header::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: #dac8b8;
+    }
+
+    /* ── Bloque por pieza ──────────────────────────────────── */
+    .pieza-bloque {
       background: white;
       border-radius: 20px;
       padding: 1.75rem 2rem;
@@ -46,7 +67,7 @@
       max-width: 960px;
       box-shadow: 0 2px 16px rgba(92,61,46,0.1);
     }
-    .pendiente-nombre {
+    .pieza-nombre {
       font-family: Georgia, serif;
       font-size: 1.3rem;
       color: #7b4f2e;
@@ -54,7 +75,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* Fila de las dos imágenes */
     .imagenes-fila {
       display: flex;
       gap: 2.5rem;
@@ -73,7 +93,6 @@
       margin-bottom: 0.75rem;
     }
 
-    /* Layout focal + preview en columna */
     .imagen-layout {
       display: flex;
       gap: 1.25rem;
@@ -94,8 +113,8 @@
     }
     .focal-area img {
       display: block;
-      max-width: 340px;
-      max-height: 380px;
+      max-width: 300px;
+      max-height: 340px;
       width: auto;
       height: auto;
       pointer-events: none;
@@ -123,6 +142,55 @@
     .focal-point::before { width: 2px; height: 10px; transform: translate(-50%,-50%); }
     .focal-point::after  { width: 10px; height: 2px; transform: translate(-50%,-50%); }
 
+    /* Control de zoom */
+    .zoom-control {
+      margin-top: 0.85rem;
+    }
+    .zoom-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #a97550;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .zoom-fila {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .zoom-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      max-width: 280px;
+      height: 6px;
+      border-radius: 3px;
+      background: #dac8b8;
+      outline: none;
+      cursor: pointer;
+    }
+    .zoom-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #c4948a;
+      border: 2px solid white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+      cursor: pointer;
+    }
+    .zoom-slider::-webkit-slider-thumb:hover { background: #7b4f2e; }
+    .zoom-valor {
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      color: #5c3d2e;
+      min-width: 3.5rem;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
     /* Vista previa */
     .preview-col { flex-shrink: 0; }
     .preview-label {
@@ -135,7 +203,7 @@
     }
     .preview-card {
       width: 220px;
-      height: 165px; /* 4:3 */
+      height: 165px;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 3px 12px rgba(92,61,46,0.15);
@@ -148,12 +216,12 @@
       -webkit-user-drag: none;
     }
     .valor-display {
-      margin-top: 0.6rem;
+      margin-top: 0.5rem;
       font-family: 'Courier New', monospace;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       background: #faf0e8;
       border: 1.5px solid #dac8b8;
-      padding: 0.3rem 0.6rem;
+      padding: 0.25rem 0.5rem;
       border-radius: 6px;
       color: #5c3d2e;
       display: inline-block;
@@ -165,7 +233,7 @@
       border-radius: 20px;
       padding: 1.75rem 2rem;
       max-width: 960px;
-      margin: 0 auto;
+      margin: 2rem auto 0;
       box-shadow: 0 2px 16px rgba(92,61,46,0.1);
     }
     .export-panel h2 {
@@ -186,6 +254,12 @@
       border-radius: 4px;
       font-size: 0.82rem;
     }
+    .export-subtitulo {
+      font-family: Georgia, serif;
+      color: #a97550;
+      font-size: 1rem;
+      margin: 1.25rem 0 0.5rem;
+    }
     pre {
       background: #1a1a2e;
       color: #a8d8a0;
@@ -195,7 +269,7 @@
       font-size: 0.83rem;
       line-height: 1.9;
       overflow-x: auto;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
     .btn-copiar {
       background: #c4948a;
@@ -212,60 +286,70 @@
     .btn-copiar:hover { background: #7b4f2e; }
     .btn-copiar.copiado { background: #4caa6e; }
 
-    .divisor {
-      border: none;
-      border-top: 1.5px solid #ede0d6;
-      margin: 1.5rem 0;
+    .divisor-vertical {
+      width: 1.5px;
+      background: #ede0d6;
+      flex-shrink: 0;
+      align-self: stretch;
+      margin: 0 0.5rem;
     }
   </style>
 </head>
 <body>
 
   <div class="cabecera">
-    <h1>Ajustar encuadre de pendientes</h1>
+    <h1>Ajustar encuadre de imágenes</h1>
     <p>
       Haz clic o arrastra el <strong>punto rojo</strong> para elegir qué parte de la imagen se verá.
-      Cada pendiente tiene <strong>dos ajustes independientes</strong>: la foto principal (la tarjeta)
-      y la foto de detalle (la que aparece al abrir el pendiente).<br><br>
-      Los cambios se aplican solos al recargar <code>index.html</code>. No hace falta copiar nada a mano.
+      Usa el <strong>deslizador de zoom</strong> para acercar o alejar el encuadre.<br><br>
+      Cada pieza tiene <strong>dos ajustes independientes</strong>: la foto principal (tarjeta)
+      y la foto de detalle (al abrir la pieza).<br><br>
+      Los cambios se aplican solos al recargar <code>index.html</code>. Para publicarlos en la web,
+      copia los valores del panel de exportación y pégalos en <code>js/catalog.js</code>.
     </p>
   </div>
 
-  <div id="contenedor"></div>
+  <div class="seccion-header"><h2>Collares</h2></div>
+  <div id="contenedor-collares"></div>
+
+  <div class="seccion-header"><h2>Pendientes</h2></div>
+  <div id="contenedor-pendientes"></div>
 
   <div class="export-panel">
     <h2>Valores para catalog.js</h2>
     <p class="nota">
-      Los ajustes ya están activos en la web local automáticamente.<br>
-      Si quieres fijarlos en <code>js/catalog.js</code> antes de publicar,
-      copia estos valores y reemplaza <code>posicion</code> y <code>posicionDetalle</code> de cada pendiente.
+      Copia estos valores en <code>js/catalog.js</code> dentro de cada entrada
+      para que los ajustes funcionen también en la web publicada.
     </p>
-    <pre id="export-pre"></pre>
+
+    <div class="export-subtitulo">Collares</div>
+    <pre id="export-pre-collares"></pre>
+
+    <div class="export-subtitulo">Pendientes</div>
+    <pre id="export-pre-pendientes"></pre>
+
     <button class="btn-copiar" id="btn-copiar" onclick="copiarValores()">
-      Copiar al portapapeles
+      Copiar todo al portapapeles
     </button>
   </div>
 
   <script>
-    const PENDIENTES = [
-      { id: "blanca",   nombre: "BLANCA",
-        main:    "images/pendientes/P.Blanca-main.jpg",
-        detalle: "images/pendientes/P.Blanca-detalle.jpg" },
-      { id: "carmen",   nombre: "CARMEN",
-        main:    "images/pendientes/P.Carmen-main.jpg",
-        detalle: "images/pendientes/P.Carmen-detalle.jpg" },
-      { id: "maribel",  nombre: "MARIBEL",
-        main:    "images/pendientes/P.Maribel-main.jpg",
-        detalle: "images/pendientes/P.Maribel-detalle.jpg" },
-      { id: "marisa",   nombre: "MARISA",
-        main:    "images/pendientes/P.Marisa-main.jpg",
-        detalle: "images/pendientes/P.Marisa-detalle.jpg" },
-      { id: "paz",      nombre: "PAZ",
-        main:    "images/pendientes/P.Paz-main.jpg",
-        detalle: "images/pendientes/P.Paz-detalle.jpg" },
-      { id: "victoria", nombre: "VICTORIA",
-        main:    "images/pendientes/P.Victoria-main.jpg",
-        detalle: "images/pendientes/P.Victoria-detalle.jpg" },
+    const COLLARES_FOTOS = [
+      { id: "liz",      nombre: "LIZ",      main: "images/collares/liz-main.jpg",      detalle: "images/collares/liz-detalle.jpg" },
+      { id: "barbara",  nombre: "BARBARA",  main: "images/collares/barbara-main.png",  detalle: "images/collares/barbara-detalle.png" },
+      { id: "grace",    nombre: "GRACE",    main: "images/collares/grace-main.png",    detalle: "images/collares/grace-detalle.png" },
+      { id: "penelope", nombre: "PENÉLOPE", main: "images/collares/penelope-main.png", detalle: "images/collares/penelope-detalle.png" },
+      { id: "ingrid",   nombre: "INGRID",   main: "images/collares/ingrid-main.png",   detalle: "images/collares/ingrid-detalle.png" },
+      { id: "nicole",   nombre: "NICOLE",   main: "images/collares/nicole-main.png",   detalle: "images/collares/nicole-detalle.png" },
+    ];
+
+    const PENDIENTES_FOTOS = [
+      { id: "blanca",   nombre: "BLANCA",   main: "images/pendientes/P.Blanca-main.jpg",   detalle: "images/pendientes/P.Blanca-detalle.jpg" },
+      { id: "paz",      nombre: "PAZ",      main: "images/pendientes/P.Paz-main.jpg",      detalle: "images/pendientes/P.Paz-detalle.jpg" },
+      { id: "maribel",  nombre: "MARIBEL",  main: "images/pendientes/P.Maribel-main.jpg",  detalle: "images/pendientes/P.Maribel-detalle.jpg" },
+      { id: "marisa",   nombre: "MARISA",   main: "images/pendientes/P.Marisa-main.jpg",   detalle: "images/pendientes/P.Marisa-detalle.jpg" },
+      { id: "carmen",   nombre: "CARMEN",   main: "images/pendientes/P.Carmen-main.jpg",   detalle: "images/pendientes/P.Carmen-detalle.jpg" },
+      { id: "victoria", nombre: "VICTORIA", main: "images/pendientes/P.Victoria-main.jpg", detalle: "images/pendientes/P.Victoria-detalle.jpg" },
     ];
 
     // ── Almacenamiento ─────────────────────────────────────────────────────
@@ -273,27 +357,41 @@
     const datos = JSON.parse(localStorage.getItem(KEY) || "{}");
 
     function cargar(key) {
-      return datos[key] || { fx: 50, fy: 50 };
+      return datos[key] || { fx: 50, fy: 50, zoom: 1 };
     }
-    function guardar(key, fx, fy) {
-      datos[key] = { fx, fy };
+    function guardar(key, fx, fy, zoom) {
+      datos[key] = { fx, fy, zoom };
       localStorage.setItem(KEY, JSON.stringify(datos));
     }
-
     function posStr(key) {
       const { fx, fy } = datos[key] || { fx: 50, fy: 50 };
       return `${Math.round(fx)}% ${Math.round(fy)}%`;
     }
+    function zoomVal(key) {
+      return (datos[key] && datos[key].zoom != null) ? datos[key].zoom : 1;
+    }
 
     // ── Panel de exportación ───────────────────────────────────────────────
     function actualizarExport() {
-      const lineas = PENDIENTES.flatMap(p => [
+      const lineasCollares = COLLARES_FOTOS.flatMap(p => [
         `  // ${p.nombre}`,
-        `  posicion:        "${posStr(p.id)}",`,
-        `  posicionDetalle: "${posStr(p.id + '_detalle')}",`,
+        `  posicion:            "${posStr(p.id)}",`,
+        `  posicionZoom:        ${zoomVal(p.id).toFixed(2)},`,
+        `  posicionDetalle:     "${posStr(p.id + '_detalle')}",`,
+        `  posicionDetalleZoom: ${zoomVal(p.id + '_detalle').toFixed(2)},`,
         '',
       ]);
-      document.getElementById("export-pre").textContent = lineas.join("\n");
+      document.getElementById("export-pre-collares").textContent = lineasCollares.join("\n");
+
+      const lineasPendientes = PENDIENTES_FOTOS.flatMap(p => [
+        `  // ${p.nombre}`,
+        `  posicion:            "${posStr(p.id)}",`,
+        `  posicionZoom:        ${zoomVal(p.id).toFixed(2)},`,
+        `  posicionDetalle:     "${posStr(p.id + '_detalle')}",`,
+        `  posicionDetalleZoom: ${zoomVal(p.id + '_detalle').toFixed(2)},`,
+        '',
+      ]);
+      document.getElementById("export-pre-pendientes").textContent = lineasPendientes.join("\n");
     }
 
     // ── Crear bloque de ajuste para una imagen ─────────────────────────────
@@ -305,65 +403,92 @@
       wrap.innerHTML = `
         <div class="imagen-titulo">${labelTipo}</div>
         <div class="imagen-layout">
-          <div class="focal-area">
-            <img class="focal-img" src="${srcImagen}" alt="" />
-            <div class="focal-point"></div>
+          <div>
+            <div class="focal-area">
+              <img class="focal-img" src="${srcImagen}" alt="" />
+              <div class="focal-point"></div>
+            </div>
+            <div class="zoom-control">
+              <span class="zoom-label">Zoom</span>
+              <div class="zoom-fila">
+                <input type="range" class="zoom-slider" min="1" max="2.5" step="0.05" value="${pos.zoom || 1}" />
+                <span class="zoom-valor">${(pos.zoom || 1).toFixed(2)}×</span>
+              </div>
+            </div>
           </div>
           <div class="preview-col">
             <div class="preview-label">Vista previa</div>
             <div class="preview-card">
               <img class="preview-img" src="${srcImagen}" alt="" />
             </div>
-            <div class="valor-display">${posStr(storageKey)}</div>
+            <div class="valor-display pos-display">${posStr(storageKey)}</div>
+            <div class="valor-display zoom-display">${(pos.zoom || 1).toFixed(2)}×</div>
           </div>
         </div>
       `;
       contenedor.appendChild(wrap);
 
-      // Usar querySelector dentro de wrap — así no depende de que esté en el DOM principal
-      const focalArea  = wrap.querySelector(".focal-area");
-      const dot        = wrap.querySelector(".focal-point");
-      const previewImg = wrap.querySelector(".preview-img");
-      const valorEl    = wrap.querySelector(".valor-display");
-      const imgEl      = wrap.querySelector(".focal-img");
+      const focalArea   = wrap.querySelector(".focal-area");
+      const dot         = wrap.querySelector(".focal-point");
+      const previewImg  = wrap.querySelector(".preview-img");
+      const posDisplay  = wrap.querySelector(".pos-display");
+      const zoomDisplay = wrap.querySelector(".zoom-display");
+      const imgEl       = wrap.querySelector(".focal-img");
+      const zoomSlider  = wrap.querySelector(".zoom-slider");
 
-      function aplicar(fx, fy) {
-        fx = Math.max(0, Math.min(100, fx));
-        fy = Math.max(0, Math.min(100, fy));
-        guardar(storageKey, fx, fy);
+      function aplicar(fx, fy, zoom) {
+        fx   = Math.max(0, Math.min(100, fx));
+        fy   = Math.max(0, Math.min(100, fy));
+        zoom = Math.max(1, Math.min(2.5, zoom));
+        guardar(storageKey, fx, fy, zoom);
+
         dot.style.left = `${fx}%`;
         dot.style.top  = `${fy}%`;
-        previewImg.style.objectPosition = posStr(storageKey);
-        valorEl.textContent = posStr(storageKey);
+
+        previewImg.style.objectPosition = `${Math.round(fx)}% ${Math.round(fy)}%`;
+        previewImg.style.transform       = `scale(${zoom})`;
+        previewImg.style.transformOrigin = `${Math.round(fx)}% ${Math.round(fy)}%`;
+
+        posDisplay.textContent  = posStr(storageKey);
+        zoomDisplay.textContent = `${zoom.toFixed(2)}×`;
+        zoomSlider.value        = zoom;
+
         actualizarExport();
       }
 
-      const init = () => aplicar(pos.fx, pos.fy);
+      const init = () => aplicar(pos.fx, pos.fy, pos.zoom || 1);
       if (imgEl.complete) init(); else imgEl.addEventListener("load", init);
 
+      // Zoom slider
+      zoomSlider.addEventListener("input", () => {
+        const d = datos[storageKey] || { fx: 50, fy: 50 };
+        aplicar(d.fx, d.fy, parseFloat(zoomSlider.value));
+      });
+
+      // Focal point drag
       function coords(e) {
-        const r = focalArea.getBoundingClientRect();
+        const r  = focalArea.getBoundingClientRect();
         const cx = e.touches ? e.touches[0].clientX : e.clientX;
         const cy = e.touches ? e.touches[0].clientY : e.clientY;
         return { fx: (cx - r.left) / r.width * 100, fy: (cy - r.top) / r.height * 100 };
       }
 
       let drag = false;
-      focalArea.addEventListener("mousedown",  e => { drag = true;  const {fx,fy} = coords(e); aplicar(fx,fy); e.preventDefault(); });
-      document.addEventListener("mousemove",   e => { if (!drag) return; const {fx,fy} = coords(e); aplicar(fx,fy); });
+      focalArea.addEventListener("mousedown",  e => { drag = true;  const {fx,fy} = coords(e); aplicar(fx, fy, zoomVal(storageKey)); e.preventDefault(); });
+      document.addEventListener("mousemove",   e => { if (!drag) return; const {fx,fy} = coords(e); aplicar(fx, fy, zoomVal(storageKey)); });
       document.addEventListener("mouseup",     () => { drag = false; });
-      focalArea.addEventListener("touchstart", e => { drag = true;  const {fx,fy} = coords(e); aplicar(fx,fy); e.preventDefault(); }, { passive: false });
-      document.addEventListener("touchmove",   e => { if (!drag) return; const {fx,fy} = coords(e); aplicar(fx,fy); }, { passive: true });
+      focalArea.addEventListener("touchstart", e => { drag = true;  const {fx,fy} = coords(e); aplicar(fx, fy, zoomVal(storageKey)); e.preventDefault(); }, { passive: false });
+      document.addEventListener("touchmove",   e => { if (!drag) return; const {fx,fy} = coords(e); aplicar(fx, fy, zoomVal(storageKey)); }, { passive: true });
       document.addEventListener("touchend",    () => { drag = false; });
     }
 
-    // ── Crear bloque por pendiente ─────────────────────────────────────────
-    function crearBloque(p) {
+    // ── Crear bloque por pieza ─────────────────────────────────────────────
+    function crearBloque(p, contenedorId) {
       const bloque = document.createElement("div");
-      bloque.className = "pendiente-bloque";
+      bloque.className = "pieza-bloque";
 
       const titulo = document.createElement("div");
-      titulo.className = "pendiente-nombre";
+      titulo.className = "pieza-nombre";
       titulo.textContent = p.nombre;
       bloque.appendChild(titulo);
 
@@ -374,26 +499,33 @@
       crearAjuste(fila, p.id,              p.main,    "Foto principal (tarjeta)");
 
       const divisor = document.createElement("div");
-      divisor.style.cssText = "width:1.5px;background:#ede0d6;flex-shrink:0;align-self:stretch;margin:0 0.5rem";
+      divisor.className = "divisor-vertical";
       fila.appendChild(divisor);
 
       crearAjuste(fila, p.id + "_detalle", p.detalle, "Foto de detalle (al abrir)");
 
-      document.getElementById("contenedor").appendChild(bloque);
+      document.getElementById(contenedorId).appendChild(bloque);
     }
 
     // ── Copiar ─────────────────────────────────────────────────────────────
     function copiarValores() {
-      navigator.clipboard.writeText(document.getElementById("export-pre").textContent).then(() => {
+      const texto =
+        "// ── COLLARES ──\n" +
+        document.getElementById("export-pre-collares").textContent +
+        "\n// ── PENDIENTES ──\n" +
+        document.getElementById("export-pre-pendientes").textContent;
+
+      navigator.clipboard.writeText(texto).then(() => {
         const btn = document.getElementById("btn-copiar");
         btn.textContent = "¡Copiado!";
         btn.classList.add("copiado");
-        setTimeout(() => { btn.textContent = "Copiar al portapapeles"; btn.classList.remove("copiado"); }, 2500);
+        setTimeout(() => { btn.textContent = "Copiar todo al portapapeles"; btn.classList.remove("copiado"); }, 2500);
       });
     }
 
     // ── Arrancar ───────────────────────────────────────────────────────────
-    PENDIENTES.forEach(crearBloque);
+    COLLARES_FOTOS.forEach(p  => crearBloque(p,  "contenedor-collares"));
+    PENDIENTES_FOTOS.forEach(p => crearBloque(p, "contenedor-pendientes"));
     actualizarExport();
   </script>
 
