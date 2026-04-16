@@ -201,20 +201,24 @@ function abrirModal(id) {
   contenido.innerHTML = `
     <div class="modal-grid">
       <div class="modal-imagenes">
-        <img
-          src="${item.imagen}"
-          alt="${tipoLabel} ${item.nombre}"
-          class="modal-img-principal"
-          style="object-position: ${posMain}; transform: scale(${zoomMain}); transform-origin: ${posMain}"
-          onerror="intentarExtAlternativa(this)"
-        />
-        <img
-          src="${item.imagenDetalle}"
-          alt="Detalle de ${item.nombre}"
-          class="modal-img-detalle"
-          style="object-position: ${posDetalle}; transform: scale(${zoomDetalle}); transform-origin: ${posDetalle}"
-          onerror="intentarExtAlternativa(this)"
-        />
+        <div class="modal-img-wrapper">
+          <img
+            src="${item.imagen}"
+            alt="${tipoLabel} ${item.nombre}"
+            class="modal-img-principal"
+            style="object-position: ${posMain}; transform: scale(${zoomMain}); transform-origin: ${posMain}"
+            onerror="intentarExtAlternativa(this)"
+          />
+        </div>
+        <div class="modal-img-wrapper">
+          <img
+            src="${item.imagenDetalle}"
+            alt="Detalle de ${item.nombre}"
+            class="modal-img-detalle"
+            style="object-position: ${posDetalle}; transform: scale(${zoomDetalle}); transform-origin: ${posDetalle}"
+            onerror="intentarExtAlternativa(this)"
+          />
+        </div>
       </div>
       <div class="modal-texto">
         <h2>${item.nombre}</h2>
