@@ -23,6 +23,8 @@ const COLLARES = [
     precio: 49,
     imagen: "images/collares/liz-main.jpg",
     imagenDetalle: "images/collares/liz-detalle.jpg",
+    posicion:        "50% 50%",
+    posicionDetalle: "50% 50%",
     descripcion:
       "Obra maestra artesanal de diseño elegante y atemporal. Combina cuentas perladas, cristales facetados y bordes dorados que aportan luminosidad y un estilo refinado.",
     colores: ["dorado", "gris", "blanco", "beige"],
@@ -38,6 +40,8 @@ const COLLARES = [
     precio: 32,
     imagen: "images/collares/barbara-main.jpg",
     imagenDetalle: "images/collares/barbara-detalle.jpg",
+    posicion:        "50% 50%",
+    posicionDetalle: "50% 50%",
     descripcion:
       "Un collar de diseño elegante y sofisticado. Su confección meticulosa captura la luz y complementa a la perfección tanto la vestimenta formal como la casual elevada.",
     colores: ["multicolor", "dorado", "coral", "turquesa", "blanco"],
@@ -53,6 +57,8 @@ const COLLARES = [
     precio: 24,
     imagen: "images/collares/grace-main.jpg",
     imagenDetalle: "images/collares/grace-detalle.jpg",
+    posicion:        "50% 50%",
+    posicionDetalle: "50% 50%",
     descripcion:
       "La encarnación del lujo discreto y la sofisticación. Inspirado en el resplandor de una noche de gala, diseñado para ser el centro de atención.",
     colores: ["dorado", "rosa-claro", "gris", "beige"],
@@ -76,10 +82,8 @@ const COLLARES = [
     materiales: "Cuentas en tonos pastel, tejido artesanal a mano",
     ocasion: "Día a día, eventos al aire libre, primavera-verano",
     etiquetas: ["bohemio", "primavera", "casual"],
-    posicion:            "center center",
-    posicionZoom:        1.20,
-    posicionDetalle:     "60% 40%",
-    posicionDetalleZoom: 1.00,
+    posicion:        "49% 27%",
+    posicionDetalle: "63% 77%",
   },
   {
     id: "ingrid",
@@ -87,6 +91,8 @@ const COLLARES = [
     precio: 27,
     imagen: "images/collares/ingrid-main.jpg",
     imagenDetalle: "images/collares/ingrid-detalle.jpg",
+    posicion:        "50% 50%",
+    posicionDetalle: "50% 50%",
     descripcion:
       "Collar babero tejido a mano con técnica intrincada. Captura la serenidad de los campos de lavanda. Su diseño volumétrico y la mezcla de texturas lo convierten en una pieza sofisticada.",
     colores: ["blanco", "dorado", "lavanda", "beige"],
@@ -102,6 +108,8 @@ const COLLARES = [
     precio: 26,
     imagen: "images/collares/nicole-main.jpg",
     imagenDetalle: "images/collares/nicole-detalle.jpg",
+    posicion:        "50% 50%",
+    posicionDetalle: "50% 50%",
     descripcion:
       "Collar largo sofisticado que juega con la luz y la textura. Diseñado para la mujer que aprecia la elegancia modular y el detalle artesanal.",
     colores: ["blanco", "dorado", "multicolor", "rosa-claro", "verdoso", "azulado", "beige"],
