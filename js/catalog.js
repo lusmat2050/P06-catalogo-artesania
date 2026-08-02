@@ -209,7 +209,7 @@ const PENDIENTES = [
   {
     id: "victoria",
     nombre: "VICTORIA",
-    precio: 48,
+    precio: 59,
     imagen: "images/pendientes/P.Victoria-main.jpg",
     imagenDetalle: "images/pendientes/P.Victoria-detalle.jpg",
     posicion: "50% 28%",
