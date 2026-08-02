@@ -13,7 +13,7 @@
  *   tipo (pendientes): aros | colgantes
  *   estilo: elegante | romantico | bohemio | sofisticado
  *
- * Precios: IVA (21%) y gastos de envío incluidos.
+ * Precios sin IVA. Gastos de envío no incluidos.
  */
 
 const COLLARES = [
