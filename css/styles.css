@@ -17,8 +17,8 @@
   --sombra:      rgba(92, 61, 46, 0.12);
   --sombra-hover:rgba(92, 61, 46, 0.22);
 
-  --fuente-titulo: 'Playfair Display', Georgia, serif;
-  --fuente-texto:  'Lato', system-ui, sans-serif;
+  --fuente-titulo: 'Cormorant Garamond', Georgia, serif;
+  --fuente-texto:  'Quattrocento Sans', system-ui, sans-serif;
 
   --radio: 16px;
   --radio-grande: 32px;
@@ -36,6 +36,7 @@ html {
 
 body {
   font-family: var(--fuente-texto);
+  font-weight: 400;
   background-color: var(--crema);
   color: var(--marron-texto);
   line-height: 1.7;
@@ -50,12 +51,12 @@ a { color: inherit; text-decoration: none; }
 /* ─── Tipografía ────────────────────────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--fuente-titulo);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--marron);
   line-height: 1.25;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h1 { font-size: clamp(2.8rem, 5.8vw, 7rem); }
 h2 { font-size: clamp(1.5rem, 3vw, 2.4rem); }
 h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 
@@ -76,7 +77,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   background-color: var(--malva);
   color: var(--blanco);
   border: 2px solid var(--malva);
-  border-radius: 50px;
+  border-radius: 0;
   font-family: var(--fuente-texto);
   font-size: 0.95rem;
   font-weight: 600;
@@ -96,7 +97,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   background-color: transparent;
   color: var(--marron);
   border: 2px solid var(--malva);
-  border-radius: 50px;
+  border-radius: 0;
   font-family: var(--fuente-texto);
   font-size: 0.95rem;
   font-weight: 600;
@@ -160,7 +161,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 .navbar-logo {
   font-family: var(--fuente-titulo);
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--marron);
   letter-spacing: 0.02em;
 }
@@ -186,7 +187,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   background-color: var(--malva);
   color: var(--blanco) !important;
   padding: 0.45rem 1.1rem;
-  border-radius: 50px;
+  border-radius: 0;
   transition: background-color var(--transicion) !important;
 }
 .nav-cta:hover { background-color: var(--marron) !important; }
@@ -249,20 +250,21 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   z-index: 1;
 }
 .hero-texto {
-  max-width: 540px;
+  max-width: 640px;
 }
 .hero-texto h1 {
   margin-bottom: 1.25rem;
+  color: #000;
 }
 .hero-texto h1 em {
   font-style: italic;
-  color: var(--malva);
+  color: #a8562f;
 }
 .hero-texto p {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: var(--marron-claro);
   margin-bottom: 2rem;
-  max-width: 460px;
+  max-width: 580px;
 }
 .hero-acciones {
   display: flex;
@@ -288,28 +290,38 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .hero-imagen-wrapper img {
   width: 100%;
-  border-radius: var(--radio-grande);
+  border-radius: 0;
   object-fit: cover;
   aspect-ratio: 4/5;
   box-shadow: 0 20px 60px var(--sombra);
 }
 .hero-imagen-badge {
   position: absolute;
-  bottom: 1.5rem;
-  left: -1rem;
-  background-color: var(--blanco);
-  border-radius: var(--radio);
-  padding: 0.85rem 1.2rem;
+  bottom: -1.5rem;
+  left: -2rem;
+  background-color: #fdf5ec;
+  border: 1px solid var(--crema-oscuro);
+  border-radius: 0;
+  padding: 1.6rem 2.5rem;
   box-shadow: 0 8px 24px var(--sombra);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.9rem;
-  font-weight: 700;
+  gap: 0.6rem;
+  text-align: center;
+}
+.hero-imagen-badge .badge-titulo {
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1;
   color: var(--marron);
 }
-.hero-imagen-badge .icono {
-  font-size: 1.5rem;
+.hero-imagen-badge .badge-sub {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--marron-claro);
 }
 
 /* ─── HISTORIA ──────────────────────────────────────────────────────────── */
@@ -401,7 +413,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 .tab-btn {
   padding: 0.6rem 2.25rem;
   border: 2px solid var(--malva);
-  border-radius: 50px;
+  border-radius: 0;
   background-color: transparent;
   color: var(--marron);
   font-family: var(--fuente-texto);
@@ -629,7 +641,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   padding: 0.45rem 1.1rem;
   background-color: transparent;
   border: 1.5px solid var(--malva);
-  border-radius: 50px;
+  border-radius: 0;
   color: var(--marron);
   font-family: var(--fuente-texto);
   font-size: 0.85rem;
