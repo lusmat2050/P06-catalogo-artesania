@@ -103,6 +103,23 @@ const COLLARES = [
     etiquetas: ["lavanda", "romántico", "boda"],
   },
   {
+    id: "audrey",
+    nombre: "AUDREY",
+    precio: 32,
+    imagen: "images/collares/audrey-main.jpg",
+    imagenDetalle: "images/collares/audrey-main.jpg",
+    posicion:        "50% 50%",
+    posicionDetalle: "50% 50%",
+    descripcion:
+      "Esta joya es el encuentro idóneo entre la elegancia de una gran ocasión y el latido más honesto de la artesanía lenta. Un amuleto con conciencia, impregnado de alma y del cromatismo de nuestra tierra.",
+    colores: ["dorado", "beige"],
+    largo: "corto",
+    estilos: ["elegante", "sofisticado"],
+    materiales: "Realizado a mano con materiales seleccionados",
+    ocasion: "Eventos y ocasiones especiales",
+    etiquetas: ["formal", "noche", "boda"],
+  },
+  {
     id: "nicole",
     nombre: "NICOLE",
     precio: 26,
