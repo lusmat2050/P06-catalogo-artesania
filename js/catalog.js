@@ -107,7 +107,7 @@ const COLLARES = [
     nombre: "AUDREY",
     precio: 32,
     imagen: "images/collares/audrey-main.jpg",
-    imagenDetalle: "images/collares/audrey-main.jpg",
+    imagenDetalle: "images/collares/audrey-detalle.jpg",
     posicion:        "50% 50%",
     posicionDetalle: "50% 50%",
     descripcion:
