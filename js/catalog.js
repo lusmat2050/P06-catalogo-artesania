@@ -120,6 +120,23 @@ const COLLARES = [
     etiquetas: ["formal", "noche", "boda"],
   },
   {
+    id: "lisa",
+    nombre: "LISA",
+    precio: 32,
+    imagen: "images/collares/lisa-main.jpg",
+    imagenDetalle: "images/collares/lisa-detalle.jpg",
+    posicion:        "50% 50%",
+    posicionDetalle: "50% 50%",
+    descripcion:
+      "Este diseño combina la sofisticación clásica de la perla con la calidez del oro, creando una pieza versátil que ilumina cualquier atuendo, ya sea un vestido de noche o una blusa de seda para el día.",
+    colores: ["dorado", "blanco", "beige"],
+    largo: "corto",
+    estilos: ["elegante", "sofisticado"],
+    materiales: "Perlas sintéticas, detalles en dorado",
+    ocasion: "Noches especiales, bodas, día a día",
+    etiquetas: ["versátil", "noche", "boda"],
+  },
+  {
     id: "nicole",
     nombre: "NICOLE",
     precio: 26,
