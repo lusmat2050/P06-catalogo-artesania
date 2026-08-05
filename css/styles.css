@@ -412,10 +412,10 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .tab-btn {
   padding: 0.6rem 2.25rem;
-  border: 2px solid #8C4A3E;
+  border: 2px solid #C96A4D;
   border-radius: 0;
   background-color: transparent;
-  color: #8C4A3E;
+  color: #C96A4D;
   font-family: var(--fuente-texto);
   font-size: 0.95rem;
   font-weight: 700;
@@ -425,7 +425,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .tab-btn:hover,
 .tab-btn.activo {
-  background-color: #8C4A3E;
+  background-color: #C96A4D;
   color: var(--blanco);
 }
 
