@@ -74,9 +74,9 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 .btn-principal {
   display: inline-block;
   padding: 0.75rem 1.75rem;
-  background-color: var(--marron);
+  background-color: #8C4A3E;
   color: var(--blanco);
-  border: 2px solid var(--marron);
+  border: 2px solid #8C4A3E;
   border-radius: 0;
   font-family: var(--fuente-texto);
   font-size: 0.95rem;
@@ -184,7 +184,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 #nav-links a:hover { color: var(--malva); }
 
 .nav-cta {
-  background-color: var(--marron);
+  background-color: #8C4A3E;
   color: var(--blanco) !important;
   padding: 0.45rem 1.1rem;
   border-radius: 0;
