@@ -74,9 +74,9 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 .btn-principal {
   display: inline-block;
   padding: 0.75rem 1.75rem;
-  background-color: var(--malva);
+  background-color: var(--marron);
   color: var(--blanco);
-  border: 2px solid var(--malva);
+  border: 2px solid var(--marron);
   border-radius: 0;
   font-family: var(--fuente-texto);
   font-size: 0.95rem;
@@ -85,8 +85,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   transition: background-color var(--transicion), transform var(--transicion), box-shadow var(--transicion);
 }
 .btn-principal:hover {
-  background-color: var(--marron);
-  border-color: var(--marron);
+  background-color: var(--marron-texto);
+  border-color: var(--marron-texto);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px var(--sombra-hover);
 }
@@ -184,13 +184,13 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 #nav-links a:hover { color: var(--malva); }
 
 .nav-cta {
-  background-color: var(--malva);
+  background-color: var(--marron);
   color: var(--blanco) !important;
   padding: 0.45rem 1.1rem;
   border-radius: 0;
   transition: background-color var(--transicion) !important;
 }
-.nav-cta:hover { background-color: var(--marron) !important; }
+.nav-cta:hover { background-color: var(--marron-texto) !important; }
 
 #menu-toggle {
   display: none;
@@ -412,7 +412,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .tab-btn {
   padding: 0.6rem 2.25rem;
-  border: 2px solid var(--malva);
+  border: 2px solid var(--marron);
   border-radius: 0;
   background-color: transparent;
   color: var(--marron);
@@ -425,7 +425,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .tab-btn:hover,
 .tab-btn.activo {
-  background-color: var(--malva);
+  background-color: var(--marron);
   color: var(--blanco);
 }
 
