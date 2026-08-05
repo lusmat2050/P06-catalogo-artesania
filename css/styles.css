@@ -596,13 +596,15 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  background-color: var(--blanco);
+  background-color: #fdf5ec;
   color: var(--marron);
-  font-size: 0.75rem;
+  border: 1px solid var(--crema-oscuro);
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 0.25rem 0.7rem;
-  border-radius: 50px;
-  letter-spacing: 0.05em;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .card-info {
   padding: 1.25rem 1.5rem 1.5rem;
