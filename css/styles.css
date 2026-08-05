@@ -534,6 +534,15 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   color: #8a6a5a;
   line-height: 1.5;
 }
+.catalogo-nota-pendientes {
+  text-align: center;
+  max-width: 60ch;
+  margin: 2rem auto 0;
+  font-size: 0.95rem;
+  color: var(--marron-texto);
+  line-height: 1.7;
+  font-style: italic;
+}
 
 .filtros-footer {
   display: flex;

@@ -174,6 +174,7 @@ function switchTab(tab) {
 
   document.querySelector(".filtros-grupo-largo")?.classList.toggle("oculto", tab !== "collares");
   document.querySelector(".filtros-grupo-tipo")?.classList.toggle("oculto", tab !== "pendientes");
+  document.querySelector(".catalogo-nota-pendientes")?.classList.toggle("oculto", tab !== "pendientes");
 
   limpiarFiltros();
 }
