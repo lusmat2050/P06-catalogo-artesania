@@ -1,5 +1,5 @@
-﻿?/**
- * catalog.js �?" Datos del catálogo de collares y pendientes
+﻿/**
+ * catalog.js -" Datos del catálogo de collares y pendientes
  *
  * Para añadir o modificar una pieza, edita el array correspondiente.
  * Para cambiar una foto, cambia solo la ruta dentro de este archivo.
@@ -13,7 +13,7 @@
  *   tipo (pendientes): aros | colgantes
  *   estilo: elegante | romantico | bohemio | sofisticado
  *
- * Precios con IVA y gastos de env�o incluidos.
+ * Precios con IVA y gastos de envío incluidos.
  */
 
 const COLLARES = [
@@ -70,7 +70,7 @@ const COLLARES = [
   },
   {
     id: "penelope",
-    nombre: "PEN�?LOPE",
+    nombre: "PENÉLOPE",
     precio: 25,
     imagen: "images/collares/penelope-main.jpg",
     imagenDetalle: "images/collares/penelope-detalle.jpg",
@@ -156,7 +156,7 @@ const COLLARES = [
 ];
 
 // posicion: controla el encuadre de la imagen en la tarjeta (object-position CSS).
-// Valores: "center top" | "center center" | "center bottom" | "left 30%" | "center 20%" �?�
+// Valores: "center top" | "center center" | "center bottom" | "left 30%" | "center 20%" …
 // Ajusta el valor de cada pendiente hasta que la imagen quede bien centrada.
 
 const PENDIENTES = [
