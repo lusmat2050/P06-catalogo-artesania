@@ -1,10 +1,10 @@
-﻿/**
- * catalog.js â€” Datos del catÃ¡logo de collares y pendientes
+﻿?/**
+ * catalog.js �?" Datos del catálogo de collares y pendientes
  *
- * Para aÃ±adir o modificar una pieza, edita el array correspondiente.
+ * Para añadir o modificar una pieza, edita el array correspondiente.
  * Para cambiar una foto, cambia solo la ruta dentro de este archivo.
- * Las imÃ¡genes de collares deben estar en images/collares/
- * Las imÃ¡genes de pendientes deben estar en images/pendientes/
+ * Las imágenes de collares deben estar en images/collares/
+ * Las imágenes de pendientes deben estar en images/pendientes/
  *
  * Atributos de filtro disponibles:
  *   colores: dorado | multicolor | blanco | turquesa | rojo | coral | naranja | negro | plateado
@@ -13,7 +13,7 @@
  *   tipo (pendientes): aros | colgantes
  *   estilo: elegante | romantico | bohemio | sofisticado
  *
- * Precios con IVA y gastos de envío incluidos.
+ * Precios con IVA y gastos de env�o incluidos.
  */
 
 const COLLARES = [
@@ -26,11 +26,11 @@ const COLLARES = [
     posicion:        "50% 50%",
     posicionDetalle: "50% 50%",
     descripcion:
-      "Obra maestra artesanal de diseÃ±o elegante y atemporal. Combina cuentas perladas, cristales facetados y bordes dorados que aportan luminosidad y un estilo refinado.",
+      "Obra maestra artesanal de diseño elegante y atemporal. Combina cuentas perladas, cristales facetados y bordes dorados que aportan luminosidad y un estilo refinado.",
     colores: ["dorado", "gris", "blanco", "beige"],
     largo: "corto",
     estilos: ["elegante", "sofisticado"],
-    materiales: "Perlas sintÃ©ticas de alta calidad, cristales facetados en tonos champagne e hielo, hilo y estructura dorada",
+    materiales: "Perlas sintéticas de alta calidad, cristales facetados en tonos champagne e hielo, hilo y estructura dorada",
     ocasion: "Eventos, noches especiales, bodas",
     etiquetas: ["formal", "noche", "boda"],
   },
@@ -43,13 +43,13 @@ const COLLARES = [
     posicion:        "50% 50%",
     posicionDetalle: "50% 50%",
     descripcion:
-      "Un collar de diseÃ±o elegante y sofisticado. Su confecciÃ³n meticulosa captura la luz y complementa a la perfecciÃ³n tanto la vestimenta formal como la casual elevada.",
+      "Un collar de diseño elegante y sofisticado. Su confección meticulosa captura la luz y complementa a la perfección tanto la vestimenta formal como la casual elevada.",
     colores: ["multicolor", "dorado", "coral", "turquesa", "blanco"],
     largo: "corto",
     estilos: ["elegante", "sofisticado"],
     materiales: "Cristales multicolor, cuentas pastel, estructura dorada",
-    ocasion: "DÃ­a a dÃ­a, trabajo, salidas",
-    etiquetas: ["versÃ¡til", "casual", "formal"],
+    ocasion: "Día a día, trabajo, salidas",
+    etiquetas: ["versátil", "casual", "formal"],
   },
   {
     id: "grace",
@@ -60,27 +60,27 @@ const COLLARES = [
     posicion:        "50% 50%",
     posicionDetalle: "50% 50%",
     descripcion:
-      "La encarnaciÃ³n del lujo discreto y la sofisticaciÃ³n. Inspirado en el resplandor de una noche de gala, diseÃ±ado para ser el centro de atenciÃ³n.",
+      "La encarnación del lujo discreto y la sofisticación. Inspirado en el resplandor de una noche de gala, diseñado para ser el centro de atención.",
     colores: ["dorado", "rosa-claro", "gris", "beige"],
     largo: "corto",
     estilos: ["elegante"],
     materiales: "Perlas y cristales con detalles dorados, cierre de bola y cono",
-    ocasion: "Galas, eventos especiales, noches de celebraciÃ³n",
+    ocasion: "Galas, eventos especiales, noches de celebración",
     etiquetas: ["gala", "noche", "formal"],
   },
   {
     id: "penelope",
-    nombre: "PENÃ‰LOPE",
+    nombre: "PEN�?LOPE",
     precio: 25,
     imagen: "images/collares/penelope-main.jpg",
     imagenDetalle: "images/collares/penelope-detalle.jpg",
     descripcion:
-      "Collar largo tejido a mano, una joya etÃ©rea que evoca la dulzura de un jardÃ­n en primavera. Sus vibrantes tonos pastel aÃ±aden un toque bohemio, romÃ¡ntico y chic.",
+      "Collar largo tejido a mano, una joya etérea que evoca la dulzura de un jardín en primavera. Sus vibrantes tonos pastel añaden un toque bohemio, romántico y chic.",
     colores: ["dorado", "multicolor", "rosa-claro", "verdoso", "azulado", "beige"],
     largo: "largo",
     estilos: ["bohemio", "romantico"],
     materiales: "Cuentas en tonos pastel, tejido artesanal a mano",
-    ocasion: "DÃ­a a dÃ­a, eventos al aire libre, primavera-verano",
+    ocasion: "Día a día, eventos al aire libre, primavera-verano",
     etiquetas: ["bohemio", "primavera", "casual"],
     posicion:        "49% 27%",
     posicionDetalle: "63% 77%",
@@ -94,13 +94,13 @@ const COLLARES = [
     posicion:        "50% 50%",
     posicionDetalle: "50% 50%",
     descripcion:
-      "Collar babero tejido a mano con tÃ©cnica intrincada. Captura la serenidad de los campos de lavanda. Su diseÃ±o volumÃ©trico y la mezcla de texturas lo convierten en una pieza sofisticada.",
+      "Collar babero tejido a mano con técnica intrincada. Captura la serenidad de los campos de lavanda. Su diseño volumétrico y la mezcla de texturas lo convierten en una pieza sofisticada.",
     colores: ["blanco", "dorado", "lavanda", "beige"],
     largo: "corto",
     estilos: ["romantico", "sofisticado"],
-    materiales: "Cuentas en tonos lavanda y perla, tejido artesanal volumÃ©trico",
+    materiales: "Cuentas en tonos lavanda y perla, tejido artesanal volumétrico",
     ocasion: "Eventos, primavera-verano, bodas",
-    etiquetas: ["lavanda", "romÃ¡ntico", "boda"],
+    etiquetas: ["lavanda", "romántico", "boda"],
   },
   {
     id: "audrey",
@@ -111,7 +111,7 @@ const COLLARES = [
     posicion:        "50% 50%",
     posicionDetalle: "50% 50%",
     descripcion:
-      "Esta joya es el encuentro idÃ³neo entre la elegancia de una gran ocasiÃ³n y el latido mÃ¡s honesto de la artesanÃ­a lenta. Un amuleto con conciencia, impregnado de alma y del cromatismo de nuestra tierra.",
+      "Esta joya es el encuentro idóneo entre la elegancia de una gran ocasión y el latido más honesto de la artesanía lenta. Un amuleto con conciencia, impregnado de alma y del cromatismo de nuestra tierra.",
     colores: ["dorado", "beige"],
     largo: "corto",
     estilos: ["elegante", "sofisticado"],
@@ -128,13 +128,13 @@ const COLLARES = [
     posicion:        "50% 50%",
     posicionDetalle: "50% 50%",
     descripcion:
-      "Este diseÃ±o combina la sofisticaciÃ³n clÃ¡sica de la perla con la calidez del oro, creando una pieza versÃ¡til que ilumina cualquier atuendo, ya sea un vestido de noche o una blusa de seda para el dÃ­a.",
+      "Este diseño combina la sofisticación clásica de la perla con la calidez del oro, creando una pieza versátil que ilumina cualquier atuendo, ya sea un vestido de noche o una blusa de seda para el día.",
     colores: ["dorado", "blanco", "beige"],
     largo: "corto",
     estilos: ["elegante", "sofisticado"],
-    materiales: "Perlas sintÃ©ticas, detalles en dorado",
-    ocasion: "Noches especiales, bodas, dÃ­a a dÃ­a",
-    etiquetas: ["versÃ¡til", "noche", "boda"],
+    materiales: "Perlas sintéticas, detalles en dorado",
+    ocasion: "Noches especiales, bodas, día a día",
+    etiquetas: ["versátil", "noche", "boda"],
   },
   {
     id: "nicole",
@@ -145,18 +145,18 @@ const COLLARES = [
     posicion:        "50% 50%",
     posicionDetalle: "50% 50%",
     descripcion:
-      "Collar largo sofisticado que juega con la luz y la textura. DiseÃ±ado para la mujer que aprecia la elegancia modular y el detalle artesanal.",
+      "Collar largo sofisticado que juega con la luz y la textura. Diseñado para la mujer que aprecia la elegancia modular y el detalle artesanal.",
     colores: ["blanco", "dorado", "multicolor", "rosa-claro", "verdoso", "azulado", "beige"],
     largo: "largo",
     estilos: ["elegante", "romantico"],
-    materiales: "Cuentas pastel y blanco nacarado, diseÃ±o modular artesanal",
-    ocasion: "DÃ­a especial, trabajo creativo, eventos diurnos",
-    etiquetas: ["versÃ¡til", "elegante", "diurno"],
+    materiales: "Cuentas pastel y blanco nacarado, diseño modular artesanal",
+    ocasion: "Día especial, trabajo creativo, eventos diurnos",
+    etiquetas: ["versátil", "elegante", "diurno"],
   },
 ];
 
 // posicion: controla el encuadre de la imagen en la tarjeta (object-position CSS).
-// Valores: "center top" | "center center" | "center bottom" | "left 30%" | "center 20%" â€¦
+// Valores: "center top" | "center center" | "center bottom" | "left 30%" | "center 20%" �?�
 // Ajusta el valor de cada pendiente hasta que la imagen quede bien centrada.
 
 const PENDIENTES = [
@@ -169,12 +169,12 @@ const PENDIENTES = [
     posicion: "51% 28%",
     posicionDetalle: "67% 63%",
     descripcion:
-      "Pendientes colgantes en blanco y turquesa, ligeros y delicados como las flores del campo. Su pureza los hace perfectos para cualquier ocasiÃ³n.",
+      "Pendientes colgantes en blanco y turquesa, ligeros y delicados como las flores del campo. Su pureza los hace perfectos para cualquier ocasión.",
     colores: ["dorado", "turquesa"],
     tipo: "colgantes",
     estilos: ["elegante", "romantico"],
-    materiales: "Cuentas blancas nacaradas, perlas sintÃ©ticas, estructura ligera dorada",
-    ocasion: "DÃ­a a dÃ­a, eventos, bodas",
+    materiales: "Cuentas blancas nacaradas, perlas sintéticas, estructura ligera dorada",
+    ocasion: "Día a día, eventos, bodas",
   },
   {
     id: "paz",
@@ -190,7 +190,7 @@ const PENDIENTES = [
     tipo: "colgantes",
     estilos: ["romantico", "bohemio"],
     materiales: "Cuentas pastel y perlas blancas, tejido artesanal ligero",
-    ocasion: "DÃ­a a dÃ­a, paseos, eventos casuales",
+    ocasion: "Día a día, paseos, eventos casuales",
   },
   {
     id: "maribel",
@@ -201,12 +201,12 @@ const PENDIENTES = [
     posicion: "50% 31%",
     posicionDetalle: "61% 68%",
     descripcion:
-      "Colgante con cuentas en tonos pastel y lavanda tejidos a mano. Coloridos, alegres y llenos de la energÃ­a de un jardÃ­n en primavera.",
+      "Colgante con cuentas en tonos pastel y lavanda tejidos a mano. Coloridos, alegres y llenos de la energía de un jardín en primavera.",
     colores: ["dorado", "turquesa", "coral", "naranja"],
     tipo: "colgantes",
     estilos: ["romantico", "bohemio"],
     materiales: "Cuentas pastel y lavanda, aros tejidos a mano",
-    ocasion: "Primavera-verano, dÃ­a a dÃ­a, eventos al aire libre",
+    ocasion: "Primavera-verano, día a día, eventos al aire libre",
   },
   {
     id: "marisa",
@@ -217,12 +217,12 @@ const PENDIENTES = [
     posicion: "35% 47%",
     posicionDetalle: "62% 43%",
     descripcion:
-      "Colgante dorados con perlas que combinan la elegancia clÃ¡sica con el toque artesanal. Una pieza atemporal que nunca pasa de moda.",
+      "Colgante dorados con perlas que combinan la elegancia clásica con el toque artesanal. Una pieza atemporal que nunca pasa de moda.",
     colores: ["dorado", "negro"],
     tipo: "colgantes",
     estilos: ["elegante", "sofisticado"],
-    materiales: "Perlas sintÃ©ticas, estructura de aro dorada, acabado artesanal",
-    ocasion: "DÃ­a a dÃ­a, trabajo, eventos formales",
+    materiales: "Perlas sintéticas, estructura de aro dorada, acabado artesanal",
+    ocasion: "Día a día, trabajo, eventos formales",
   },
   {
     id: "carmen",
@@ -233,12 +233,12 @@ const PENDIENTES = [
     posicion: "55% 25%",
     posicionDetalle: "58% 53%",
     descripcion:
-      "Pendientes colgantes de inspiraciÃ³n flamenca con detalles dorados que capturan la luz de la Feria. Un homenaje a la artesanÃ­a sevillana.",
+      "Pendientes colgantes de inspiración flamenca con detalles dorados que capturan la luz de la Feria. Un homenaje a la artesanía sevillana.",
     colores: ["dorado", "rojo"],
     tipo: "colgantes",
     estilos: ["elegante", "sofisticado"],
     materiales: "Cristales dorados, cuentas multicolor, acabado artesanal",
-    ocasion: "Feria, eventos especiales, noches de celebraciÃ³n",
+    ocasion: "Feria, eventos especiales, noches de celebración",
   },
   {
     id: "victoria",
@@ -249,11 +249,11 @@ const PENDIENTES = [
     posicion: "50% 28%",
     posicionDetalle: "43% 55%",
     descripcion:
-      "Pendientes colgantes elaborados con cristales y cuentas nacar. Una joya artesanal diseÃ±ada para brillar en las celebraciones mÃ¡s especiales.",
+      "Pendientes colgantes elaborados con cristales y cuentas nacar. Una joya artesanal diseñada para brillar en las celebraciones más especiales.",
     colores: ["blanco", "dorado", "beige"],
     tipo: "colgantes",
     estilos: ["elegante", "sofisticado"],
-    materiales: "Cristales facetados, cuentas doradas, diseÃ±o colgante artesanal",
+    materiales: "Cristales facetados, cuentas doradas, diseño colgante artesanal",
     ocasion: "Feria, bodas, galas, noches especiales",
   },
 ];
