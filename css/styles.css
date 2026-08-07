@@ -215,7 +215,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-color: var(--crema);
+  background: linear-gradient(90deg, var(--crema) 0%, var(--crema) 45%, transparent 100%);
   position: relative;
   overflow: hidden;
   padding-top: 80px;
