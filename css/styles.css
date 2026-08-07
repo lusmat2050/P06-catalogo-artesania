@@ -639,7 +639,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .collar-card {
   background-color: var(--blanco);
-  border-radius: var(--radio);
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 16px var(--sombra);
   transition: transform var(--transicion), box-shadow var(--transicion);
@@ -692,7 +692,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .card-descripcion {
   font-size: 0.9rem;
-  color: var(--marron-claro);
+  color: var(--crema);
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 3;
