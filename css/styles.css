@@ -362,7 +362,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   font-family: var(--fuente-titulo);
   font-size: 1.05rem;
   font-style: italic;
-  color: var(--malva);
+  color: var(--marron-claro);
   border-left: 3px solid var(--malva-claro);
   padding-left: 1.25rem;
   margin: 1.5rem 0;
