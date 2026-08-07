@@ -298,8 +298,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 .hero-imagen-badge {
   position: absolute;
   bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 1.5rem;
+  transform: none;
   background-color: #fdf5ec;
   border: 1px solid var(--crema-oscuro);
   border-radius: 0;
