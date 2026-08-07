@@ -366,6 +366,25 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   padding-left: 1.25rem;
   margin: 1.5rem 0;
 }
+.historia-firma {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 1.5rem 0;
+}
+.historia-firma .firma-texto {
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--malva);
+}
+.historia-firma .firma-nombre {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--malva);
+  line-height: 1;
+}
 
 /* ─── PROPUESTA DE VALOR ────────────────────────────────────────────────── */
 #valor .valor-grid {
