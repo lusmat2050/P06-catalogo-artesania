@@ -410,6 +410,36 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 .valor-card .cuidados-lista li strong {
   color: var(--marron);
 }
+.cuidados-bloque {
+  margin-top: 3rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+.cuidados-bloque h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.5rem;
+  color: var(--marron);
+  margin-bottom: 0.75rem;
+}
+.cuidados-bloque > p {
+  color: var(--marron-texto);
+  margin-bottom: 1.5rem;
+}
+.cuidados-bloque .cuidados-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 70ch;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--marron-texto);
+  line-height: 1.7;
+}
+.cuidados-bloque .cuidados-lista li strong {
+  color: var(--marron);
+}
 
 /* ─── CATÁLOGO ──────────────────────────────────────────────────────────── */
 #coleccion {
