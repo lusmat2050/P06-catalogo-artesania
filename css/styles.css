@@ -693,7 +693,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .card-descripcion {
   font-size: 0.9rem;
-  color: var(--crema);
+  color: var(--marron-claro);
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 3;
