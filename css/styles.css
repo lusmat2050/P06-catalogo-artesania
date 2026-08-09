@@ -297,11 +297,12 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .hero-imagen-badge {
   position: absolute;
-  bottom: -1.25rem;
-  left: -1.25rem;
+  bottom: -2.5rem;
+  left: -2.5rem;
   transform: none;
   background-color: #fdf5ec;
-  box-shadow: 0 0 0 1px var(--crema-oscuro), 0 8px 24px var(--sombra);
+  border: 1px solid rgba(123, 79, 46, 0.18);
+  box-shadow: 0 8px 24px var(--sombra);
   padding: 1rem 1.75rem;
   display: flex;
   flex-direction: column;
