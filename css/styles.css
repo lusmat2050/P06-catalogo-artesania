@@ -383,9 +383,9 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   color: var(--malva);
 }
 .historia-firma .firma-nombre {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Caveat', cursive;
   font-size: 2.6rem;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--malva);
   line-height: 1.2;
 }
