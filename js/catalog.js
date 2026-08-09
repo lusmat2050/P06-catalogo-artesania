@@ -201,7 +201,7 @@ const PENDIENTES = [
     posicion: "50% 31%",
     posicionDetalle: "61% 68%",
     descripcion:
-      "Colgante con cuentas en tonos pastel y lavanda tejidos a mano. Coloridos, alegres y llenos de la energía de un jardín en primavera.",
+      "Hermosos pendientes tejidos a mano con hilo dorado con diseño floral y detalles en azul turquesa y coral. Un accesorio artesanal, elegante y muy alegre",
     colores: ["dorado", "turquesa", "coral", "naranja"],
     tipo: "colgantes",
     estilos: ["romantico", "bohemio"],
