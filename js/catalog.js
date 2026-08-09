@@ -169,7 +169,7 @@ const PENDIENTES = [
     posicion: "51% 28%",
     posicionDetalle: "67% 63%",
     descripcion:
-      "Pendientes colgantes dorados y turquesa, ligeros y delicados como las flores del campo. Su pureza los hace perfectos para cualquier ocasión.",
+      "Destellos de sol y mar en filigrana dorada, llevando la magia del sur prendida de la piel.",
     colores: ["dorado", "turquesa"],
     tipo: "colgantes",
     estilos: ["elegante", "romantico"],
