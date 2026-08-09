@@ -488,6 +488,9 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   cursor: pointer;
   transition: all var(--transicion);
   letter-spacing: 0.03em;
+  text-align: center;
+  white-space: nowrap;
+  flex: 1;
 }
 .tab-btn:hover,
 .tab-btn.activo {
@@ -1110,6 +1113,8 @@ footer strong { opacity: 1; color: var(--marron); }
   .historia-imagen-flotante { display: none; }
   .hero-imagen-badge { display: none; }
   .filtros-wrapper { padding: 1rem; }
+  .catalogo-tabs { gap: 0.35rem; }
+  .tab-btn { padding: 0.6rem 0.5rem; font-size: 0.9rem; }
   * { min-width: 0; }
 
   .filtros-label {
