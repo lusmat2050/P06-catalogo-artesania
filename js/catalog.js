@@ -37,7 +37,7 @@ const COLLARES = [
   {
     id: "barbara",
     nombre: "BARBARA",
-    precio: 45,
+    precio: 50,
     imagen: "images/collares/barbara-main.jpg",
     imagenDetalle: "images/collares/barbara-detalle.jpg",
     posicion:        "50% 50%",
