@@ -249,7 +249,7 @@ const PENDIENTES = [
     posicion: "50% 28%",
     posicionDetalle: "43% 55%",
     descripcion:
-      "Pendientes colgantes elaborados con cristales y cuentas nacar. Una joya artesanal diseñada para brillar en las celebraciones más especiales.",
+      "Pendientes colgantes elaborados con cristales. Una joya artesanal diseñada para brillar en las celebraciones más especiales.",
     colores: ["blanco", "dorado", "beige"],
     tipo: "colgantes",
     estilos: ["elegante", "sofisticado"],
