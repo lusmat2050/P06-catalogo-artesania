@@ -160,8 +160,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .navbar-logo {
   font-family: var(--fuente-titulo);
-  font-size: 1.4rem;
-  font-weight: 400;
+  font-size: 1.7rem;
+  font-weight: 600;
   color: var(--marron);
   letter-spacing: 0.02em;
 }
