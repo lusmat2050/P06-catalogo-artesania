@@ -379,12 +379,12 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 .historia-firma .firma-texto {
   font-family: var(--fuente-titulo);
   font-style: italic;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: var(--malva);
 }
 .historia-firma .firma-nombre {
   font-family: var(--fuente-titulo);
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--malva);
   line-height: 1.1;
