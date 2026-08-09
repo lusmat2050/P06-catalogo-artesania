@@ -302,7 +302,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   transform: none;
   z-index: 2;
   background-color: #fdf5ec;
-  border: 1px solid var(--marron-claro);
+  border: 1px solid rgba(123, 79, 46, 0.4);
   box-shadow: 0 8px 24px var(--sombra);
   padding: 0.9rem 1.5rem;
   display: flex;
