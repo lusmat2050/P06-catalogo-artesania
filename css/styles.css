@@ -602,11 +602,11 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 .catalogo-nota-pendientes {
   text-align: center;
-  max-width: 60ch;
-  margin: 2rem auto 0;
-  font-size: 0.95rem;
+  max-width: 32ch;
+  margin: 3.5rem auto 3.5rem;
+  font-size: 1.1rem;
   color: var(--marron-texto);
-  line-height: 1.7;
+  line-height: 1.9;
   font-style: italic;
 }
 
