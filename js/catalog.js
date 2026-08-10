@@ -237,7 +237,7 @@ const PENDIENTES = [
     colores: ["dorado", "rojo"],
     tipo: "colgantes",
     estilos: ["elegante", "sofisticado"],
-    materiales: "Cristales dorados, cuentas multicolor, acabado artesanal",
+    materiales: "Cristal facetado rojo carmín sobre enrejado de filigrana",
     ocasion: "Feria, eventos especiales, noches de celebración",
   },
   {
