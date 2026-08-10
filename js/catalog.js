@@ -221,7 +221,7 @@ const PENDIENTES = [
     colores: ["dorado", "negro"],
     tipo: "colgantes",
     estilos: ["elegante", "sofisticado"],
-    materiales: "Perlas sintéticas, estructura de aro dorada, acabado artesanal",
+    materiales: "Cristales facetados color azabache, cosidos a mano en filigrana dorada",
     ocasion: "Día a día, trabajo, eventos formales",
   },
   {
