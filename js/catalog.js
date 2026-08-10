@@ -253,7 +253,7 @@ const PENDIENTES = [
     colores: ["blanco", "dorado", "beige"],
     tipo: "colgantes",
     estilos: ["elegante", "sofisticado"],
-    materiales: "Cristales facetados, cuentas doradas, diseño colgante artesanal",
+    materiales: "Cristales facetados, cuentas color nácar, diseño colgante artesanal",
     ocasion: "Feria, bodas, galas, noches especiales",
   },
 ];
