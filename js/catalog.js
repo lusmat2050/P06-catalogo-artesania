@@ -173,7 +173,7 @@ const PENDIENTES = [
     colores: ["dorado", "turquesa"],
     tipo: "colgantes",
     estilos: ["elegante", "romantico"],
-    materiales: "Cuentas blancas nacaradas, perlas sintéticas, estructura ligera dorada",
+    materiales: "Cuentas turquesas, perlas sintéticas, estructura ligera dorada",
     ocasion: "Día a día, eventos, bodas",
   },
   {
