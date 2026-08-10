@@ -205,7 +205,7 @@ const PENDIENTES = [
     colores: ["dorado", "turquesa", "coral", "naranja"],
     tipo: "colgantes",
     estilos: ["romantico", "bohemio"],
-    materiales: "Cuentas pastel y lavanda, aros tejidos a mano",
+    materiales: "Cuentas de cristal engarzadas en hilo dorado",
     ocasion: "Primavera-verano, día a día, eventos al aire libre",
   },
   {
