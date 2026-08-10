@@ -132,7 +132,7 @@ const COLLARES = [
     colores: ["dorado", "blanco", "beige"],
     largo: "corto",
     estilos: ["elegante", "sofisticado"],
-    materiales: "Perlas sintéticas, detalles en dorado",
+    materiales: "Perlas sintéticas de alta calidad, cristales color champagne engarzados sobre estructura dorada",
     ocasion: "Noches especiales, bodas, día a día",
     etiquetas: ["versátil", "noche", "boda"],
   },
@@ -173,7 +173,7 @@ const PENDIENTES = [
     colores: ["dorado", "turquesa"],
     tipo: "colgantes",
     estilos: ["elegante", "romantico"],
-    materiales: "Cuentas turquesas, perlas sintéticas, estructura ligera dorada",
+    materiales: "Cuentas turquesas, estructura ligera dorada",
     ocasion: "Día a día, eventos, bodas",
   },
   {
