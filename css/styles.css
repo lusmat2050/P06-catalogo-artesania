@@ -1043,6 +1043,16 @@ footer strong { opacity: 1; color: var(--marron); }
   margin: 0 0.5rem;
   opacity: 0.4;
 }
+.footer-link {
+  color: var(--marron-claro);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.footer-link:hover {
+  color: var(--malva);
+  border-bottom-color: var(--malva);
+}
 
 /* ─── Placeholders de imagen (mientras no hay foto) ────────────────────── */
 /*
