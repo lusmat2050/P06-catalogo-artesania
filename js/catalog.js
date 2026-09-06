@@ -81,11 +81,12 @@ const COLLARES = [
     colores: ["dorado", "multicolor", "rosa-claro", "verdoso", "azulado", "beige"],
     largo: "largo",
     medidas: "Mide 1,35 m",
+    aspecto: "vertical",
     estilos: ["bohemio", "romantico"],
     materiales: "Cuentas en tonos pastel, tejido artesanal a mano",
     ocasion: "Día a día, eventos al aire libre, primavera-verano",
     etiquetas: ["bohemio", "primavera", "casual"],
-    posicion:        "49% 27%",
+    posicion:        "50% 50%",
     posicionDetalle: "63% 77%",
   },
   {
