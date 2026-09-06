@@ -58,7 +58,7 @@ function renderCatalogo(items) {
 
   items.forEach((item) => {
     const card = document.createElement("article");
-    card.className = item.aspecto === "vertical" ? "collar-card card-vertical" : "collar-card";
+    card.className = "collar-card";
     card.setAttribute("data-id", item.id);
 
     const colorDots = item.colores
