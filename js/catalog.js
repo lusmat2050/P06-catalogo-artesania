@@ -160,6 +160,24 @@ const COLLARES = [
     ocasion: "Día especial, trabajo creativo, eventos diurnos",
     etiquetas: ["versátil", "elegante", "diurno"],
   },
+  {
+    id: "ava",
+    nombre: "AVA",
+    precio: 50,
+    imagen: "images/collares/ava-main.jpg",
+    imagenDetalle: "images/collares/ava-detalle.jpg",
+    posicion:        "50% 50%",
+    posicionDetalle: "50% 50%",
+    descripcion:
+      "Collar largo tejido a mano que evoca la serenidad del mar. Hilo dorado engarzado con cristales en tonalidades azules, una pieza auténtica y luminosa.",
+    colores: ["dorado", "azul"],
+    largo: "largo",
+    medidas: "Mide 80 cm",
+    estilos: ["bohemio", "elegante"],
+    materiales: "Tejido en hilo dorado engarzado con cristales de tonalidades azules",
+    ocasion: "Día a día, eventos al aire libre, primavera-verano",
+    etiquetas: ["bohemio", "mar", "elegante"],
+  },
 ];
 
 // posicion: controla el encuadre de la imagen en la tarjeta (object-position CSS).
