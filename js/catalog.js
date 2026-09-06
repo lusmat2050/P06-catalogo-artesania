@@ -148,7 +148,7 @@ const COLLARES = [
     precio: 35,
     imagen: "images/collares/nicole-main.jpg",
     imagenDetalle: "images/collares/nicole-detalle.jpg",
-    posicion:        "50% 50%",
+    posicion:        "50% 0%",
     posicionDetalle: "50% 50%",
     descripcion:
       "Collar largo sofisticado que juega con la luz y la textura. Diseñado para la mujer que aprecia la elegancia modular y el detalle artesanal.",
