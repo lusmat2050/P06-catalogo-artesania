@@ -166,7 +166,7 @@ const COLLARES = [
     precio: 50,
     imagen: "images/collares/ava-main.jpg",
     imagenDetalle: "images/collares/ava-detalle.jpg",
-    posicion:        "50% 50%",
+    posicion:        "50% 100%",
     posicionDetalle: "50% 50%",
     descripcion:
       "Collar largo tejido a mano que evoca la serenidad del mar. Hilo dorado engarzado con cristales en tonalidades azules, una pieza auténtica y luminosa.",
