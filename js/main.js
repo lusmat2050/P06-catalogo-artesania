@@ -187,10 +187,10 @@ function abrirModal(id) {
   const esPendiente = PENDIENTES.some((p) => p.id === id);
   const tipoLabel = esPendiente ? "Pendientes" : "Collar";
 
-  const detalleLinea = esPendiente
-    ? `<p><strong>Tipo:</strong> ${item.tipo === "aros" ? "Aros" : "Colgantes"}</p>`
-    : item.medidas
-      ? `<p><strong>Medidas:</strong> ${item.medidas}</p>`
+  const detalleLinea = item.medidas
+    ? `<p><strong>Medidas:</strong> ${item.medidas}</p>`
+    : esPendiente
+      ? `<p><strong>Tipo:</strong> ${item.tipo === "aros" ? "Aros" : "Colgantes"}</p>`
       : `<p><strong>Largo:</strong> ${item.largo === "largo" ? "Collar largo" : "Collar corto"}</p>`;
 
   const modal = document.getElementById("modal-collar");
