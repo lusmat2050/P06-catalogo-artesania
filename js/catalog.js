@@ -148,6 +148,7 @@ const COLLARES = [
     precio: 35,
     imagen: "images/collares/nicole-main.jpg",
     imagenDetalle: "images/collares/nicole-detalle.jpg",
+    aspecto: "vertical",
     posicion:        "50% 50%",
     posicionDetalle: "50% 50%",
     descripcion:
