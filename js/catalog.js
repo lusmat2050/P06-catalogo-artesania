@@ -85,7 +85,7 @@ const COLLARES = [
     materiales: "Cuentas en tonos pastel, tejido artesanal a mano",
     ocasion: "Día a día, eventos al aire libre, primavera-verano",
     etiquetas: ["bohemio", "primavera", "casual"],
-    posicion:        "50% 100%",
+    posicion:        "50% 50%",
     posicionDetalle: "63% 77%",
   },
   {
