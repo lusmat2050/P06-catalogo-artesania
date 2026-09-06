@@ -162,7 +162,7 @@ const COLLARES = [
   },
   {
     id: "ava",
-    nombre: "AVA",
+    nombre: "LAUREN",
     precio: 50,
     imagen: "images/collares/ava-main.jpg",
     imagenDetalle: "images/collares/ava-detalle.jpg",
