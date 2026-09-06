@@ -661,6 +661,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   background-color: var(--crema-oscuro);
 }
 .collar-card.card-vertical .card-imagen-wrapper { aspect-ratio: 3/4; }
+.card-completo .card-imagen-wrapper img { object-fit: contain; }
 .card-imagen-wrapper img {
   width: 100%;
   height: 100%;
