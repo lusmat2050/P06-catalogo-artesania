@@ -175,7 +175,7 @@ const COLLARES = [
     medidas: "Mide 80 cm",
     estilos: ["bohemio", "elegante"],
     materiales: "Tejido en hilo dorado engarzado con cristales de tonalidades azules",
-    ocasion: "Día a día, eventos al aire libre, primavera-verano",
+    ocasion: "Para cualquier ocasión, para el día a día o cita especial",
     etiquetas: ["bohemio", "mar", "elegante"],
   },
 ];
