@@ -213,7 +213,7 @@ function abrirModal(id) {
             onerror="intentarExtAlternativa(this)"
           />
         </div>
-        <div class="modal-img-wrapper">
+        <div class="modal-img-wrapper${item.aspectoDetalle === "cuadrado" ? " modal-img-cuadrado" : ""}">
           <img
             src="${item.imagenDetalle}"
             alt="Detalle de ${item.nombre}"
