@@ -189,7 +189,9 @@ function abrirModal(id) {
 
   const detalleLinea = esPendiente
     ? `<p><strong>Tipo:</strong> ${item.tipo === "aros" ? "Aros" : "Colgantes"}</p>`
-    : `<p><strong>Largo:</strong> ${item.largo === "largo" ? "Collar largo" : "Collar corto"}</p>`;
+    : item.medidas
+      ? `<p><strong>Medidas:</strong> ${item.medidas}</p>`
+      : `<p><strong>Largo:</strong> ${item.largo === "largo" ? "Collar largo" : "Collar corto"}</p>`;
 
   const modal = document.getElementById("modal-collar");
   const contenido = document.getElementById("modal-contenido");

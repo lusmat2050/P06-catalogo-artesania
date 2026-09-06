@@ -97,6 +97,7 @@ const COLLARES = [
       "Collar babero tejido a mano con técnica intrincada. Captura la serenidad de los campos de lavanda. Su diseño volumétrico y la mezcla de texturas lo convierten en una pieza sofisticada.",
     colores: ["blanco", "dorado", "lavanda", "beige"],
     largo: "corto",
+    medidas: "Mide 43 cm · Cierre de botón",
     estilos: ["romantico", "sofisticado"],
     materiales: "Cuentas en tonos lavanda y perla, tejido artesanal volumétrico",
     ocasion: "Eventos, primavera-verano, bodas",
