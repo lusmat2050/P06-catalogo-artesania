@@ -287,4 +287,21 @@ const PENDIENTES = [
     materiales: "Cristales facetados, cuentas color nácar, diseño colgante artesanal",
     ocasion: "Feria, bodas, galas, noches especiales",
   },
+  {
+    id: "aitana",
+    nombre: "AITANA",
+    precio: 50,
+    medidas: "Mide 7 cm de largo más gancho 9 cm · Ancho 5 cm",
+    imagen: "images/pendientes/P.Aitana-main.jpg",
+    imagenDetalle: "images/pendientes/P.Aitana-detalle.jpg",
+    posicion: "50% 35%",
+    posicionDetalle: "50% 50%",
+    descripcion:
+      "Creación artesanal de lujo de estética maximalista que evoca la rica tradición de la joyería andaluza. Piezas grandes y ornamentadas diseñadas para ser el punto focal de cualquier atuendo.",
+    colores: ["dorado", "rojo"],
+    tipo: "colgantes",
+    estilos: ["elegante", "sofisticado"],
+    materiales: "Cristales y detalles dorados, diseño artesanal",
+    ocasion: "Feria, eventos especiales, noches de celebración",
+  },
 ];
