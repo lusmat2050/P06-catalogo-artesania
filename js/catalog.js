@@ -291,7 +291,7 @@ const PENDIENTES = [
     id: "aitana",
     nombre: "AITANA",
     precio: 50,
-    medidas: "Mide 7 cm de largo más gancho 9 cm · Ancho 5 cm",
+    medidas: "Mide 7 cm de largo · Ancho 5 cm · Cierre de mariposa",
     imagen: "images/pendientes/P.Aitana-main.jpg",
     imagenDetalle: "images/pendientes/P.Aitana-detalle.jpg",
     posicion: "50% 35%",
