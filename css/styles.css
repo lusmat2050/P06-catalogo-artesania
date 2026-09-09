@@ -1030,6 +1030,14 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   stroke: var(--malva);
   flex-shrink: 0;
 }
+.contacto-item a {
+  color: var(--marron-texto);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.contacto-item a:hover {
+  color: var(--malva);
+}
 
 /* ─── FOOTER ────────────────────────────────────────────────────────────── */
 footer {
