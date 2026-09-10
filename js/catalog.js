@@ -191,6 +191,7 @@ const PENDIENTES = [
     id: "blanca",
     nombre: "BLANCA",
     precio: 40,
+    medidas: "Mide 7 cm de largo y 3 cm de ancho",
     imagen: "images/pendientes/P.Blanca-main.jpg",
     imagenDetalle: "images/pendientes/P.Blanca-detalle.jpg",
     posicion: "51% 28%",
