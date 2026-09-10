@@ -29,6 +29,7 @@ const COLLARES = [
       "Obra maestra artesanal de diseño elegante y atemporal. Combina cuentas perladas, cristales facetados y bordes dorados que aportan luminosidad y un estilo refinado.",
     colores: ["dorado", "gris", "blanco", "beige"],
     largo: "corto",
+    medidas: "Mide 44 cm",
     estilos: ["elegante", "sofisticado"],
     materiales: "Perlas sintéticas de alta calidad, cristales facetados en tonos champagne e hielo, hilo y estructura dorada",
     ocasion: "Eventos, noches especiales, bodas",
